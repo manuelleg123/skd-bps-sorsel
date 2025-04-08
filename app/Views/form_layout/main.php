@@ -4,190 +4,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Modernize Free</title>
+  <title>Survei Kebutuhan Data BPS Kabupaten Sorong Selatan 2025</title>
   <link rel="shortcut icon" type="image/png" href="<?= base_url('/assets/images/logos/favicon.png'); ?>" />
   <link rel="stylesheet" href="<?= base_url('/assets/css/styles.min.css'); ?>" />
 </head>
 
 <body>
   <!--  Body Wrapper -->
-  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-    data-sidebar-position="fixed" data-header-position="fixed">
-    <!-- Sidebar Start -->
-    <aside class="left-sidebar">
-      <!-- Sidebar scroll-->
-      <div>
-        <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
-            <img src="<?= base_url('/'); ?>" width="180" alt="" />
-          </a>
-          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-            <i class="ti ti-x fs-8"></i>
-          </div>
-        </div>
-        <!-- Sidebar navigation-->
-        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-          <ul id="sidebarnav">
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">Home</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./index.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-layout-dashboard"></i>
-                </span>
-                <span class="hide-menu">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">UI COMPONENTS</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-article"></i>
-                </span>
-                <span class="hide-menu">Buttons</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-alert-circle"></i>
-                </span>
-                <span class="hide-menu">Alerts</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-cards"></i>
-                </span>
-                <span class="hide-menu">Card</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-file-description"></i>
-                </span>
-                <span class="hide-menu">Forms</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-typography"></i>
-                </span>
-                <span class="hide-menu">Typography</span>
-              </a>
-            </li>
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">AUTH</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-login"></i>
-                </span>
-                <span class="hide-menu">Login</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-user-plus"></i>
-                </span>
-                <span class="hide-menu">Register</span>
-              </a>
-            </li>
-            <li class="nav-small-cap">
-              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-              <span class="hide-menu">EXTRA</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-mood-happy"></i>
-                </span>
-                <span class="hide-menu">Icons</span>
-              </a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
-                <span>
-                  <i class="ti ti-aperture"></i>
-                </span>
-                <span class="hide-menu">Sample Page</span>
-              </a>
-            </li>
-          </ul>
-          <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
-            <div class="d-flex">
-              <div class="unlimited-access-title me-3">
-                <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Upgrade to pro</h6>
-                <a href="https://adminmart.com/product/modernize-bootstrap-5-admin-template/" target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Buy Pro</a>
-              </div>
-              <div class="unlimited-access-img">
-                <img src="<?= base_url('/assets/images/backgrounds/rocket.png'); ?>" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </nav>
-        <!-- End Sidebar navigation -->
-      </div>
-      <!-- End Sidebar scroll-->
-    </aside>
-    <!--  Sidebar End -->
+  <div class="page-wrapper" data-layout="vertical" data-navbarbg="skin6" data-header-position="fixed">
     <!--  Main wrapper -->
     <div class="body-wrapper">
       <!--  Header Start -->
       <header class="app-header">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <ul class="navbar-nav">
-            <li class="nav-item d-block d-xl-none">
-              <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
-                <i class="ti ti-menu-2"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                <i class="ti ti-bell-ringing"></i>
-                <div class="notification bg-primary rounded-circle"></div>
-              </a>
-            </li>
-          </ul>
-          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank" class="btn btn-primary">Download Free</a>
-              <li class="nav-item dropdown">
-                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <img src="../assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
-                </a>
-                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                  <div class="message-body">
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-user fs-6"></i>
-                      <p class="mb-0 fs-3">My Profile</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
-                    </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
-                    </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+        <nav class="d-flex justify-content-center navbar navbar-expand-lg navbar-light">
+          <img src="<?= base_url('/assets/images/logos/favicon.png'); ?>" class="logo-icon img-fluid" style="max-height: 50px;" />
+          <span class="navbar-brand d-none d-lg-block">
+            <h3>
+              Survei Kebutuhan Data 2025
+            </h3>
+            <h3 class="card-title">
+              BPS Kabupaten Sorong Selatan
+            </h3>
+          </span>
         </nav>
       </header>
       <!--  Header End -->
@@ -196,55 +34,171 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title fw-semibold mb-4">Forms</h5>
-              <div class="card">
-                <div class="card-body">
-                  <form>
+              <form>
+                <div class="card">
+                  <div class="card-body">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      <label for="nama" class="form-label">Nama</label>
+                      <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp">
+                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <label for="nama" class="form-label">Tahun Lahir</label>
+                      <input type="number" min="1900" class="form-control" id="tahun_lahir" name="tahun_lahir">
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                    <div class="mb-3">
+                      <label for="no_handphone" class="form-label">No Handphone</label>
+                      <input type="text" class="form-control" id="no_handphone" name="no_handphone">
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <h5 class="card-title fw-semibold mb-4">Disabled forms</h5>
-              <div class="card mb-0">
-                <div class="card-body">
-                  <form>
-                    <fieldset disabled>
-                      <legend>Disabled fieldset example</legend>
-                      <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Disabled input</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-                      </div>
-                      <div class="mb-3">
-                        <label for="disabledSelect" class="form-label">Disabled select menu</label>
-                        <select id="disabledSelect" class="form-select">
-                          <option>Disabled select</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                          <label class="form-check-label" for="disabledFieldsetCheck">
-                            Can't check this
-                          </label>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                      <select class="form-select" id="jenis_kelamin" name="jenis_kelamin">
+                        <option selected disabled>Pilih Jenis Kelamin</option>
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="pendidikan_tertinggi" class="form-label">Pendidikan Tertinggi</label>
+                      <select class="form-select" id="pendidikan_tertinggi" name="pendidikan_tertinggi">
+                        <option selected disabled>Pilih Pendidikan Tertinggi</option>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA">SMA</option>
+                        <option value="D1">D1</option>
+                        <option value="D2">D2</option>
+                        <option value="D3">D3</option>
+                        <option value="S1">S1</option>
+                        <option value="S2">S2</option>
+                        <option value="S3">S3</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="pekerjaan_utama" class="form-label">Pekerjaan Utama</label>
+                      <select class="form-select" id="pekerjaan_utama" name="pekerjaan_utama">
+                        <option selected disabled>Pilih Pekerjaan Utama</option>
+                        <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+                        <option value="Peneliti/Dosen">Peneliti/Dosen</option>
+                        <option value="ASN/TNI/Polri">ASN/TNI/Polri</option>
+                        <option value="Pegawai BUMN/BUMD">Pegawai BUMN/BUMD</option>
+                        <option value="Pegawai Swasta">Pegawai Swasta</option>
+                        <option value="Wiraswasta">Wiraswasta</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="kategori_instansi" class="form-label">Kategori Instansi</label>
+                      <select class="form-select" id="kategori_instansi" name="kategori_instansi">
+                        <option selected disabled>Pilih Kategori Instansi</option>
+                        <option value="Lembaga Negara">Lembaga Negara</option>
+                        <option value="Kementerian & Lembaga Pemerintah">Kementerian & Lembaga Pemerintah</option>
+                        <option value="TNI/Polri/BIN/Kejaksaan">TNI/Polri/BIN/Kejaksaan</option>
+                        <option value="Pemerintah Daerah">Pemerintah Daerah</option>
+                        <option value="Lembaga Internasional">Lembaga Internasional</option>
+                        <option value="Lembaga Penelitian & Pendidikan">Lembaga Penelitian & Pendidikan</option>
+                        <option value="BUMN/BUMD">BUMN/BUMD</option>
+                        <option value="Swasta">Swasta</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="nama_instansi" class="form-label">Nama Instansi</label>
+                      <input type="text" class="form-control" id="nama_instansi" name="nama_instansi">
+                    </div>
+                    <div class="mb-3">
+                      <label for="pemanfaatan_utama" class="form-label">Pemanfaatan Utama</label>
+                      <select class="form-select" id="pemanfaatan_utama" name="pemanfaatan_utama">
+                        <option selected disabled>Pilih Pemanfaatan Utama</option>
+                        <option value="Tugas Sekolah/Tugas Kuliah">Tugas Sekolah/Tugas Kuliah</option>
+                        <option value="Pemerintah"> Pemerintah</option>
+                        <option value="Penelitian">Penelitian</option>
+                        <option value="Komersil">Komersil</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="jenis_layanan" class="form-label">Jenis Layanan Yang Digunakan</label>
+                      <div id="jenis_layanan">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i1" class="custom-control-input is-invalid" name="jenis_layanan[]" value="1">
+                          <label class="custom-control-label" for="i1">Perpustakaan</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i2" class="custom-control-input" name="jenis_layanan[]" value="2">
+                          <label class="custom-control-label" for="i2">Permintaan Data</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i3" class="custom-control-input" name="jenis_layanan[]" value="3">
+                          <label class="custom-control-label" for="i3">Akses Produk pada Website BPS</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i4" class="custom-control-input" name="jenis_layanan[]" value="4">
+                          <label class="custom-control-label" for="i4">Konsultasi Statistik</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i5" class="custom-control-input" name="jenis_layanan[]" value="5">
+                          <label class="custom-control-label" for="i5">Rekomendasi Kegiatan Statistik</label>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </fieldset>
-                  </form>
+                    </div>
+                    <div class="mb-3">
+                      <label for="fasilitas_yang_digunakan" class="form-label">Fasilitas yang Digunakan</label>
+                      <div id="fasilitas_yang_digunakan">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i6" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="1">
+                          <label class="custom-control-label" for="i6">Pelayanan Statistik Terpadu (PST) datang langsung</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i7" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="2">
+                          <label class="custom-control-label" for="i7">Pelayanan Statistik Terpadu (PST) online (pst.bps.go.id)</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i8" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="3">
+                          <label class="custom-control-label" for="i8">Website BPS/AllStats BPS</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i9" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="4">
+                          <label class="custom-control-label" for="i9">Surat/Email</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i10" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="5">
+                          <label class="custom-control-label" for="i10">Aplikasi Chat (WhatsApp, Telegram, dll)</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="i11" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="6">
+                          <label class="custom-control-label" for="i11">Lainnya</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="pengaduan" class="form-label">Pernah Pengaduan ke PST?</label>
+                      <div id="pengaduan">
+                        <div class="form-check">
+                          <label class="form-check-label" for="pengaduan_ya">
+                            Ya
+                          </label>
+                          <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_ya" value="Ya">
+                        </div>
+                        <div class="form-check">
+                          <label class="form-check-label" for="pengaduan_tidak">
+                            Tidak
+                          </label>
+                          <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_tidak" value="tidak">
+                        </div>
+                      </div>
+                    </div>
+                    <a type="button" href="<?= base_url('/form1'); ?>" class="btn btn-primary">Selanjutnya</a>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

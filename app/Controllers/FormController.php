@@ -12,4 +12,9 @@ class FormController extends BaseController
         //
         return view('form_layout/main');
     }
+
+    public function form1()
+    {
+        return view('form_layout/form1');
+    }
 }

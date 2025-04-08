@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/form', 'FormController::index');
+$routes->get('/form1', 'FormController::form1');
