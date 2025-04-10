@@ -29,30 +29,33 @@
         </nav>
       </header>
       <!--  Header End -->
-      <div class="container-fluid">
-        <div class="container-fluid">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold mb-4">Forms</h5>
+      <div class="container-fluid d-flex justify-content-center" style="max-width: none;">
+        <div class="card mx-1 w-100" style="max-width: 1200px;">
+          <div class="card-body">
+            <h3 class="d-flex justify-content-center fw-semibold mb-4">SURVEI KEBUTUHAN DATA 2025</h3>
+            <h5 class="d-flex justify-content-center fw-semibold mb-4">BLOK I. Keterangan Responden</h5>
+            <div class="mx-1">
               <form>
                 <div class="card">
                   <div class="card-body">
-                    <div class="mb-3">
-                      <label for="nama" class="form-label">Nama</label>
-                      <input type="text" class="form-control" id="nama" name="nama" aria-describedby="emailHelp">
-                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                    </div>
-                    <div class="mb-3">
-                      <label for="nama" class="form-label">Tahun Lahir</label>
-                      <input type="number" min="1900" class="form-control" id="tahun_lahir" name="tahun_lahir">
-                    </div>
-                    <div class="mb-3">
-                      <label for="email" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                      <label for="no_handphone" class="form-label">No Handphone</label>
-                      <input type="text" class="form-control" id="no_handphone" name="no_handphone">
+                    <div class="container">
+                      <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama">
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                      </div>
+                      <div class="mb-3">
+                        <label for="nama" class="form-label">Tahun Lahir</label>
+                        <input type="number" min="1900" class="form-control" id="tahun_lahir" name="tahun_lahir">
+                      </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="no_handphone" class="form-label">No Handphone</label>
+                        <input type="text" class="form-control" id="no_handphone" name="no_handphone">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -210,6 +213,7 @@
   <script src="<?= base_url('/assets/js/sidebarmenu.js'); ?>"></script>
   <script src="<?= base_url('/assets/js/app.min.js'); ?>"></script>
   <script src="<?= base_url('/assets/libs/simplebar/dist/simplebar.js'); ?>"></script>
+  <script src="<?= base_url('/assets/js/form.js'); ?>"></script>
 </body>
 
 </html>
