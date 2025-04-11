@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Survei Kebutuhan Data BPS Kabupaten Sorong Selatan 2025</title>
     <link rel="shortcut icon" type="image/png" href="<?= base_url('/assets/images/logos/favicon.png'); ?>" />
+    <link rel="stylesheet" href="<?= base_url('/assets/libs/datatables/css/jquery.dataTables.min.css'); ?>" />
+    <link rel="stylesheet" href="<?= base_url('/assets/libs/datatables/buttons/css/buttons.dataTables.min.css'); ?>" />
     <link rel="stylesheet" href="<?= base_url('/assets/css/styles.min.css'); ?>" />
 </head>
 
@@ -33,7 +35,7 @@
                             <span class="hide-menu">Home</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                            <a class="sidebar-link active" href="./index.html" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-layout-dashboard"></i>
                                 </span>
@@ -42,46 +44,14 @@
                         </li>
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">UI COMPONENTS</span>
+                            <span class="hide-menu">AKSI</span>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-article"></i>
+                                    <i class="ti ti-speakerphone"></i>
                                 </span>
-                                <span class="hide-menu">Buttons</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-alert-circle"></i>
-                                </span>
-                                <span class="hide-menu">Alerts</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-cards"></i>
-                                </span>
-                                <span class="hide-menu">Card</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-file-description"></i>
-                                </span>
-                                <span class="hide-menu">Forms</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-typography"></i>
-                                </span>
-                                <span class="hide-menu">Typography</span>
+                                <span class="hide-menu">Responden</span>
                             </a>
                         </li>
                         <li class="nav-small-cap">
@@ -91,51 +61,12 @@
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-login"></i>
+                                    <i class="ti ti-logout"></i>
                                 </span>
-                                <span class="hide-menu">Login</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-user-plus"></i>
-                                </span>
-                                <span class="hide-menu">Register</span>
-                            </a>
-                        </li>
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">EXTRA</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-mood-happy"></i>
-                                </span>
-                                <span class="hide-menu">Icons</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-aperture"></i>
-                                </span>
-                                <span class="hide-menu">Sample Page</span>
+                                <span class="hide-menu">Logout</span>
                             </a>
                         </li>
                     </ul>
-                    <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
-                        <div class="d-flex">
-                            <div class="unlimited-access-title me-3">
-                                <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Upgrade to pro</h6>
-                                <a href="https://adminmart.com/product/modernize-bootstrap-5-admin-template/" target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Buy Pro</a>
-                            </div>
-                            <div class="unlimited-access-img">
-                                <img src="<?= base_url('/assets/images/backgrounds/rocket.png'); ?>" alt="" class="img-fluid">
-                            </div>
-                        </div>
-                    </div>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -554,8 +485,19 @@
             </div>
         </div>
     </div>
+    <!-- jQuery -->
     <script src="<?= base_url('/assets/libs/jquery/dist/jquery.min.js'); ?>"></script>
+    <!-- Bootstrap Bundle with Popper -->
     <script src="<?= base_url('/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
+    <!-- DataTables -->
+    <script src="<?= base_url('/assets/libs/datatables/js/jquery.dataTables.min.js'); ?>"></script>
+    <!-- DataTables Buttons (CDN) -->
+    <script src="<?= base_url('/assets/libs/datatables/buttons/js/dataTables.buttons.min.js'); ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables/buttons/js/buttons.html5.min.js'); ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables/buttons/js/jszip.min.js'); ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables/buttons/js/pdfmake.min.js'); ?>"></script>
+    <script src="<?= base_url('/assets/libs/datatables/buttons/js/vfs_fonts.js'); ?>"></script>
+    <!-- Custom JS -->
     <script src="<?= base_url('/assets/js/sidebarmenu.js'); ?>"></script>
     <script src="<?= base_url('/assets/js/app.min.js'); ?>"></script>
     <script src="<?= base_url('/assets/libs/apexcharts/dist/apexcharts.min.js'); ?>"></script>
