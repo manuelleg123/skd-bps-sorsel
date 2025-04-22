@@ -182,7 +182,7 @@
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label for="pengaduan" class="form-label">Pernah Pengaduan ke PST?</label>
+                      <label for="pengaduan" class="form-label">Apakah pernah melakukan pengaduan terkait Pelayanan Statistik Terpadu (PST)?</label>
                       <div id="pengaduan">
                         <div class="form-check">
                           <label class="form-check-label" for="pengaduan_ya">

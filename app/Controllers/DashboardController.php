@@ -10,6 +10,19 @@ class DashboardController extends BaseController
     public function index()
     {
         //
-        return view('dashboard_layout/main');
+        $data = [
+            'title' => 'Dashboard',
+            'page' => 'dashboard',
+        ];
+        return view('dashboard/dashboard', $data);
+    }
+
+    public function responden()
+    {
+        $data = [
+            'title' => 'Data Responden',
+            'page' => 'responden',
+        ];
+        return view('dashboard/responden', $data);
     }
 }
