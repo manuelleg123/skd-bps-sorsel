@@ -1,0 +1,23 @@
+.step {
+  display: none;
+}
+
+input.invalid {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+#progressBarContainer {
+  width: 100%;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+#progressBar {
+  height: 8px;
+  width: 0%;
+  background: #3498db;
+  transition: width 0.3s ease;
+}

@@ -35,15 +35,17 @@
             <h3 class="d-flex justify-content-center fw-semibold mb-4">SURVEI KEBUTUHAN DATA 2025</h3>
             <h5 class="d-flex justify-content-center fw-semibold mb-4">Blok II. Kepuasan terhadap Layanan Data dan Informasi Statistik BPS</h5>
             <div class="mx-1">
-              <div class="alert-info alert" role="alert">
-                <p>
-                  Menurut pendapat Saudara, bagaimana tingkat kepentingan dan tingkat kepuasan Saudara pada rincian pelayanan berikut?
-                </p>
-                <p>
-                  <strong>Tingkat kepentingan</strong> adalah gambaran pelayanan yang seharusnya diberikan BPS sesuai dengan keinginan/harapan konsumen. <br>
-                  <strong>Tingkat kepuasan</strong> adalah gambaran pelayanan yang sudah diberikan BPS kepada konsumen. <br>
-                  <strong>Skala 1-10</strong> adalah skala yang digunakan untuk mengukur tingkat kepuasan dan kepentingan (tidak puas/penting - sangat puas/penting). <br>
-                </p>
+              <div id="form_description">
+                <div class="alert-info alert" role="alert">
+                  <p>
+                    Menurut pendapat Saudara, bagaimana tingkat kepentingan dan tingkat kepuasan Saudara pada rincian pelayanan berikut?
+                  </p>
+                  <p>
+                    <strong>Tingkat kepentingan</strong> adalah gambaran pelayanan yang seharusnya diberikan BPS sesuai dengan keinginan/harapan konsumen. <br>
+                    <strong>Tingkat kepuasan</strong> adalah gambaran pelayanan yang sudah diberikan BPS kepada konsumen. <br>
+                    <strong>Skala 1-10</strong> adalah skala yang digunakan untuk mengukur tingkat kepuasan dan kepentingan (tidak puas/penting - sangat puas/penting). <br>
+                  </p>
+                </div>
               </div>
               <form>
                 <div class="card">
