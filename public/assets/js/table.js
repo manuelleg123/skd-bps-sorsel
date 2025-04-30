@@ -48,7 +48,7 @@ $(document).ready(function () {
             { data: 'Email' },
             { data: 'namaInstansi' },
             { data: 'tanggalPengisian' },
-            { data: null, render: () => {return '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailDataModal">Lihat</button> <button class="btn btn-danger">Delete</button>'} }
+            { data: null, render: () => {return '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailDataModal">Lihat</button> <button class="btn btn-danger" style="background-color: #dc3545;">Delete</button>'} }
         ],
         dom: 'Bfrtip',
     });
