@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?= base_url('/assets/libs/datatables/css/jquery.dataTables.min.css'); ?>" />
     <link rel="stylesheet" href="<?= base_url('/assets/libs/datatables/buttons/css/buttons.dataTables.min.css'); ?>" />
     <link rel="stylesheet" href="<?= base_url('/assets/css/styles.min.css'); ?>" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                 <?= $this->renderSection('content'); ?>
                 <!-- content End -->
                 <div class="py-6 px-6 text-center">
-                    <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></p>
+                    <p class="mb-0 fs-4">Design and Developed by <a href="https://sorongselatankab.bps.go.id" target="_blank" class="pe-1 text-primary text-decoration-underline">IPDS BPS Sorong Selatan</a></p>
                 </div>
             </div>
         </div>

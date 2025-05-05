@@ -48,8 +48,32 @@ $(document).ready(function () {
             { data: 'Email' },
             { data: 'namaInstansi' },
             { data: 'tanggalPengisian' },
-            { data: null, render: () => {return '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailDataModal">Lihat</button> <button class="btn btn-danger" style="background-color: #dc3545;">Delete</button>'} }
+            { data: null, render: () => {return '<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailDataModal">Lihat</button> <button onclick="confirmDelete()" class="btn btn-danger">Delete</button>'} }
         ],
         dom: 'Bfrtip',
     });
 });
+
+function confirmDelete() {
+    // Show a confirmation modal
+
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Data yang dihapus tidak dapat dikembalikan.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: "#0d6efd",
+        cancelButtonColor: '#dc3545',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Perform the delete action here
+            Swal.fire(
+                'Terhapus!',
+                'Data telah dihapus.',
+                'success'
+            )
+        }
+    })
+}

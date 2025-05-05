@@ -129,3 +129,23 @@ function submitForm() {
 document.addEventListener('DOMContentLoaded', () => {
     showStep(0);
 });
+
+const inputs_blok_II = document.querySelectorAll('.number');
+
+inputs_blok_II.forEach((input) => {
+    input.addEventListener('input', () => {
+        const nilai = Number(input.value);
+        const errorMessage = input.nextElementSibling;
+
+        errorMessage.style.display = 'none'; // Sembunyikan pesan kesalahan
+        if (nilai < 1 || nilai > 10) {
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+            errorMessage.style.display = 'block'; // Tampilkan pesan kesalahan
+        } else {
+            input.classList.remove('is-invalid');
+            input.classList.add('is-valid');
+            errorMessage.style.display = 'none'; // Sembunyikan pesan kesalahan
+        }
+    });
+});

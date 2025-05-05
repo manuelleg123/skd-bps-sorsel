@@ -22,7 +22,7 @@
                                 <a href="" class="text-nowrap logo-img text-center d-block py-3 w-100">
                                     <img src="<?= base_url('/assets/images/logos/favicon.png'); ?>" width="180" alt="">
                                 </a>
-                                <h2 class="text-center form-label">Masuk</h2>
+                                <h2 class="text-center">Login</h2>
                                 <form action="<?= base_url('/login'); ?>" method="POST" enctype="multipart/form-data">
                                     <?= csrf_field() ?>
                                     <div class="input-group mb-3">
@@ -40,11 +40,11 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                                        <input required type="email" name="email" value="<?= session('email') ? htmlspecialchars(session('email')) : "" ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input placeholder="Masukan Email" required type="email" name="email" value="<?= session('email') ? htmlspecialchars(session('email')) : "" ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input required type="password" name="password" class="form-control" id="exampleInputPassword1">
+                                        <input placeholder="Masukan Password" required type="password" name="password" class="form-control" id="exampleInputPassword1">
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <!-- <div class="form-check">

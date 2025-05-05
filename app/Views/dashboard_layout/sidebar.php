@@ -42,7 +42,7 @@
                     <span class="hide-menu">AUTH</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= base_url('/logout'); ?>" aria-expanded="false">
                         <span>
                             <i class="ti ti-logout"></i>
                         </span>
