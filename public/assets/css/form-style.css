@@ -28,3 +28,27 @@ input.invalid {
   display: none;
   width: 100px;
 }
+
+/* Pastikan checkbox dan label berbaris horizontal */
+#jenis_layanan .custom-control {
+  display: flex;
+  align-items: center; /* Vertikal align center jika perlu */
+  margin-bottom: 5px; /* Optional, agar ada sedikit jarak antar checkbox */
+}
+
+#jenis_layanan .custom-control-input {
+  margin-right: 5px; /* Memberikan jarak antara checkbox dan label */
+  flex-shrink: 0; /* Menghindari checkbox mengecil */
+}
+
+/* Pastikan checkbox dan label berbaris horizontal */
+#fasilitas_yang_digunakan .custom-control {
+  display: flex;
+  align-items: center; /* Vertikal align center jika perlu */
+  margin-bottom: 5px; /* Optional, agar ada sedikit jarak antar checkbox */
+}
+
+#fasilitas_yang_digunakan .custom-control-input {
+  margin-right: 5px; /* Memberikan jarak antara checkbox dan label */
+  flex-shrink: 0; /* Menghindari checkbox mengecil */
+}

@@ -34,13 +34,11 @@ function showStep(index) {
     });
     currentStep = index;
 
-    // const progress = ((index + 1) / steps.length) * 100;
-    // document.getElementById('progressBar').style.width = progress + '%';
     document.getElementById('blok_header').textContent = stepTitles[index];
     document.getElementById('form_description').innerHTML = stepDescriptions[index];
     window.scrollTo({
         top: 0,
-        behavior: 'smooth' // bikin animasi halus
+        behavior: 'smooth'
     });
 }
 
@@ -149,3 +147,120 @@ inputs_blok_II.forEach((input) => {
         }
     });
 });
+
+const form_control = document.querySelectorAll('.form-control');
+form_control.forEach((input) => {
+    input.addEventListener('input', () => {
+        const value = input.value.trim();
+        if (value.length > 0) {
+            input.classList.add('is-valid');
+            input.classList.remove('is-invalid');
+        } else {
+            input.classList.remove('is-valid');
+            input.classList.add('is-invalid');
+        }
+    });
+});
+
+const form_select = document.querySelectorAll('.form-select');
+form_select.forEach((select) => {
+    select.addEventListener('change', () => {
+        const value = select.value.trim();
+        if (value.length > 0) {
+            select.classList.add('is-valid');
+            select.classList.remove('is-invalid');
+        } else {
+            select.classList.remove('is-valid');
+            select.classList.add('is-invalid');
+        }
+    });
+});
+
+const pekerjaan_utama_select = document.getElementById('pekerjaan_utama');
+const item_pekerjaan_utama_lainnya = document.getElementById('item_pekerjaan_utama_lainnya');
+const input_pekerjaan_utama_lainnya = document.getElementById('pekerjaan_utama_lainnya');
+// const invalid_feedback = document.getElementById('invalid_feedback_pekerjaan_utama_lainnya');
+
+pekerjaan_utama_select.addEventListener('change', function () {
+    if (pekerjaan_utama_select.value === 'Lainnya') {
+        item_pekerjaan_utama_lainnya.style.display = 'block';
+        input_pekerjaan_utama_lainnya.setAttribute('required', 'required');
+    } else {
+        item_pekerjaan_utama_lainnya.style.display = 'none';
+        input_pekerjaan_utama_lainnya.removeAttribute('required');
+        input_pekerjaan_utama_lainnya.value = ''; // Reset value
+    }
+});
+
+input_pekerjaan_utama_lainnya.addEventListener('input', function () {
+    const value = input_pekerjaan_utama_lainnya.value.trim();
+    if (value.length > 0) {
+        input_pekerjaan_utama_lainnya.classList.add('is-valid');
+        input_pekerjaan_utama_lainnya.classList.remove('is-invalid');
+        // invalid_feedback.style.display = 'none'; // Sembunyikan pesan kesalahan
+    } else {
+        input_pekerjaan_utama_lainnya.classList.remove('is-valid');
+        input_pekerjaan_utama_lainnya.classList.add('is-invalid');
+        // invalid_feedback.style.display = 'block'; // Tampilkan pesan kesalahan
+    }
+});
+
+function jenisLayananToggleValidation() {
+    const checkboxes = document.querySelectorAll('#jenis_layanan .custom-control-input');
+    const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+    const invalidFeedback = document.getElementById('invalid_feedback_jenis_layanan');
+
+
+    // Iterasi dan beri class is-valid atau is-invalid pada semua checkbox
+    checkboxes.forEach(checkbox => {
+        if (anyChecked) {
+            checkbox.classList.add('is-valid');
+            checkbox.classList.remove('is-invalid');
+            invalidFeedback.style.display = 'none'; // Sembunyikan pesan kesalahan
+
+        } else {
+            checkbox.classList.add('is-invalid');
+            checkbox.classList.remove('is-valid');
+            invalidFeedback.style.display = 'block'; // Tampilkan pesan kesalahan
+        }
+    });
+}
+
+function fasilitasYangDigunakanToggleValidation() {
+    const checkboxes = document.querySelectorAll('#fasilitas_yang_digunakan .custom-control-input');
+    const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+    const invalidFeedback = document.getElementById('invalid_feedback_fasilitas_yang_digunakan');
+
+    // Iterasi dan beri class is-valid atau is-invalid pada semua checkbox
+    checkboxes.forEach(checkbox => {
+        if (anyChecked) {
+            checkbox.classList.add('is-valid');
+            checkbox.classList.remove('is-invalid');
+            invalidFeedback.style.display = 'none'; // Sembunyikan pesan kesalahan
+
+        } else {
+            checkbox.classList.add('is-invalid');
+            checkbox.classList.remove('is-valid');
+            invalidFeedback.style.display = 'block'; // Tampilkan pesan kesalahan
+        }
+    });
+}
+
+function pengaduanToggleRadioValidation() {
+    // Ambil semua radio button dalam grup #pengaduan
+    const radios = document.querySelectorAll('#pengaduan .form-check-input');
+
+    // Cek apakah ada radio button yang dipilih (checked)
+    const anyChecked = Array.from(radios).some(radio => radio.checked);
+
+    // Iterasi dan beri class is-valid atau is-invalid pada semua radio button
+    radios.forEach(radio => {
+        if (anyChecked) {
+            radio.classList.add('is-valid');
+            radio.classList.remove('is-invalid');
+        } else {
+            radio.classList.add('is-invalid');
+            radio.classList.remove('is-valid');
+        }
+    });
+}

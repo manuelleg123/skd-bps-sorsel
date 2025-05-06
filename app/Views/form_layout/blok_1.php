@@ -7,10 +7,10 @@
                     <input type="text" class="form-control" id="nama" name="nama">
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="nama" class="form-label">Tahun Lahir</label>
                     <input type="number" min="1900" class="form-control" id="tahun_lahir" name="tahun_lahir">
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
@@ -60,6 +60,10 @@
                     <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
+            <div id="item_pekerjaan_utama_lainnya" class="mb-3" style="display: none;">
+                <input type="text" class="form-control is-invalid" id="pekerjaan_utama_lainnya" name="pekerjaan_utama_lainnya" placeholder="Pekerjaan Utama Lainnya">
+                <div class="invalid-feedback" id="invalid_feedback_pekerjaan_utama_lainnya">Pekerjaan Utama Lainnya tidak boleh kosong</div>
+            </div>
             <div class="mb-3">
                 <label for="kategori_instansi" class="form-label">Kategori Instansi</label>
                 <select class="form-select" id="kategori_instansi" name="kategori_instansi">
@@ -94,55 +98,59 @@
                 <label for="jenis_layanan" class="form-label">Jenis Layanan Yang Digunakan</label>
                 <div id="jenis_layanan">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i1" class="custom-control-input is-invalid" name="jenis_layanan[]" value="1">
+                        <input type="checkbox" id="i1" class="custom-control-input form-check-input" name="jenis_layanan[]" value="1" onchange="jenisLayananToggleValidation()">
                         <label class="custom-control-label" for="i1">Perpustakaan</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i2" class="custom-control-input" name="jenis_layanan[]" value="2">
+                        <input type="checkbox" id="i2" class="custom-control-input form-check-input" name="jenis_layanan[]" value="2" onchange="jenisLayananToggleValidation()">
                         <label class="custom-control-label" for="i2">Permintaan Data</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i3" class="custom-control-input" name="jenis_layanan[]" value="3">
+                        <input type="checkbox" id="i3" class="custom-control-input form-check-input" name="jenis_layanan[]" value="4" onchange="jenisLayananToggleValidation()">
                         <label class="custom-control-label" for="i3">Akses Produk pada Website BPS</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i4" class="custom-control-input" name="jenis_layanan[]" value="4">
+                        <input type="checkbox" id="i4" class="custom-control-input form-check-input" name="jenis_layanan[]" value="8" onchange="jenisLayananToggleValidation()">
                         <label class="custom-control-label" for="i4">Konsultasi Statistik</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i5" class="custom-control-input" name="jenis_layanan[]" value="5">
+                        <input type="checkbox" id="i5" class="custom-control-input form-check-input" name="jenis_layanan[]" value="16" onchange="jenisLayananToggleValidation()">
                         <label class="custom-control-label" for="i5">Rekomendasi Kegiatan Statistik</label>
                     </div>
+                    <div class="invalid-feedback" id="invalid_feedback_jenis_layanan" style="display: none;">Jenis Layanan wajib diisi</div>
                 </div>
+                <small id="jenis_layanan_help" class="form-text text-muted">Boleh pilih lebih dari satu jawaban</small>
             </div>
             <div class="mb-3">
                 <label for="fasilitas_yang_digunakan" class="form-label">Fasilitas yang Digunakan</label>
                 <div id="fasilitas_yang_digunakan">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i6" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="1">
+                        <input type="checkbox" id="i6" class="custom-control-input form-check-input" name="fasilitas_yang_digunakan[]" value="1" onchange="fasilitasYangDigunakanToggleValidation()">
                         <label class="custom-control-label" for="i6">Pelayanan Statistik Terpadu (PST) datang langsung</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i7" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="2">
+                        <input type="checkbox" id="i7" class="custom-control-input form-check-input" name="fasilitas_yang_digunakan[]" value="2" onchange="fasilitasYangDigunakanToggleValidation()">
                         <label class="custom-control-label" for="i7">Pelayanan Statistik Terpadu (PST) online (pst.bps.go.id)</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i8" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="3">
+                        <input type="checkbox" id="i8" class="custom-control-input form-check-input" name="fasilitas_yang_digunakan[]" value="4" onchange="fasilitasYangDigunakanToggleValidation()">
                         <label class="custom-control-label" for="i8">Website BPS/AllStats BPS</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i9" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="4">
+                        <input type="checkbox" id="i9" class="custom-control-input form-check-input" name="fasilitas_yang_digunakan[]" value="8" onchange="fasilitasYangDigunakanToggleValidation()">
                         <label class="custom-control-label" for="i9">Surat/Email</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i10" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="5">
+                        <input type="checkbox" id="i10" class="custom-control-input form-check-input" name="fasilitas_yang_digunakan[]" value="16" onchange="fasilitasYangDigunakanToggleValidation()">
                         <label class="custom-control-label" for="i10">Aplikasi Chat (WhatsApp, Telegram, dll)</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="i11" class="custom-control-input" name="fasilitas_yang_digunakan[]" value="6">
+                        <input type="checkbox" id="i11" class="custom-control-input form-check-input" name="fasilitas_yang_digunakan[]" value="32" onchange="fasilitasYangDigunakanToggleValidation()">
                         <label class="custom-control-label" for="i11">Lainnya</label>
                     </div>
+                    <div class="invalid-feedback" id="invalid_feedback_fasilitas_yang_digunakan" style="display: none;">Jenis Layanan wajib diisi</div>
                 </div>
+                <small id="jenis_layanan_help" class="form-text text-muted">Boleh pilih lebih dari satu jawaban</small>
             </div>
             <div class="mb-3">
                 <label for="pengaduan" class="form-label">Apakah pernah melakukan pengaduan terkait Pelayanan Statistik Terpadu (PST)?</label>
@@ -151,13 +159,13 @@
                         <label class="form-check-label" for="pengaduan_ya">
                             Ya
                         </label>
-                        <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_ya" value="Ya">
+                        <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_ya" value="1" onchange="pengaduanToggleRadioValidation()">
                     </div>
                     <div class="form-check">
                         <label class="form-check-label" for="pengaduan_tidak">
                             Tidak
                         </label>
-                        <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_tidak" value="tidak">
+                        <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_tidak" value="0" onchange="pengaduanToggleRadioValidation()">
                     </div>
                 </div>
             </div>
