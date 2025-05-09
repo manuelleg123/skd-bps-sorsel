@@ -128,6 +128,20 @@ document.addEventListener('DOMContentLoaded', () => {
     showStep(0);
 });
 
+const form_control = document.querySelectorAll('.form-control');
+form_control.forEach((input) => {
+    input.addEventListener('input', () => {
+        const value = input.value.trim();
+        if (value.length > 0) {
+            input.classList.add('is-valid');
+            input.classList.remove('is-invalid');
+        } else {
+            input.classList.remove('is-valid');
+            input.classList.add('is-invalid');
+        }
+    });
+});
+
 const inputs_blok_II = document.querySelectorAll('.number');
 
 inputs_blok_II.forEach((input) => {
@@ -148,19 +162,6 @@ inputs_blok_II.forEach((input) => {
     });
 });
 
-const form_control = document.querySelectorAll('.form-control');
-form_control.forEach((input) => {
-    input.addEventListener('input', () => {
-        const value = input.value.trim();
-        if (value.length > 0) {
-            input.classList.add('is-valid');
-            input.classList.remove('is-invalid');
-        } else {
-            input.classList.remove('is-valid');
-            input.classList.add('is-invalid');
-        }
-    });
-});
 
 const form_select = document.querySelectorAll('.form-select');
 form_select.forEach((select) => {
@@ -197,11 +198,61 @@ input_pekerjaan_utama_lainnya.addEventListener('input', function () {
     if (value.length > 0) {
         input_pekerjaan_utama_lainnya.classList.add('is-valid');
         input_pekerjaan_utama_lainnya.classList.remove('is-invalid');
-        // invalid_feedback.style.display = 'none'; // Sembunyikan pesan kesalahan
     } else {
         input_pekerjaan_utama_lainnya.classList.remove('is-valid');
         input_pekerjaan_utama_lainnya.classList.add('is-invalid');
-        // invalid_feedback.style.display = 'block'; // Tampilkan pesan kesalahan
+    }
+});
+
+const kategori_instansi_select = document.getElementById('kategori_instansi');
+const item_kategori_instansi_lainnya = document.getElementById('item_kategori_instansi_lainnya');
+const input_kategori_instansi_lainnya = document.getElementById('kategori_instansi_lainnya');
+
+kategori_instansi_select.addEventListener('change', function () {
+    if (kategori_instansi_select.value === 'Lainnya') {
+        item_kategori_instansi_lainnya.style.display = 'block';
+        input_kategori_instansi_lainnya.setAttribute('required', 'required');
+    } else {
+        item_kategori_instansi_lainnya.style.display = 'none';
+        input_kategori_instansi_lainnya.removeAttribute('required');
+        input_kategori_instansi_lainnya.value = ''; // Reset value
+    }
+});
+
+input_kategori_instansi_lainnya.addEventListener('input', function () {
+    const value = input_kategori_instansi_lainnya.value.trim();
+    if (value.length > 0) {
+        input_kategori_instansi_lainnya.classList.add('is-valid');
+        input_kategori_instansi_lainnya.classList.remove('is-invalid');
+    } else {
+        input_kategori_instansi_lainnya.classList.remove('is-valid');
+        input_kategori_instansi_lainnya.classList.add('is-invalid');
+    }
+});
+
+const pemanfaatan_utama_select = document.getElementById('pemanfaatan_utama');
+const item_pemanfaataan_utama_lainnya = document.getElementById('item_pemanfaatan_utama_lainnya');
+const input_pemanfaataan_utama_lainnya = document.getElementById('pemanfaatan_utama_lainnya');
+
+pemanfaatan_utama_select.addEventListener('change', function () {
+    if (pemanfaatan_utama_select.value === 'Lainnya') {
+        item_pemanfaataan_utama_lainnya.style.display = 'block';
+        input_pemanfaataan_utama_lainnya.setAttribute('required', 'required');
+    } else {
+        item_pemanfaataan_utama_lainnya.style.display = 'none';
+        input_pemanfaataan_utama_lainnya.removeAttribute('required');
+        input_pemanfaataan_utama_lainnya.value = '';
+    }
+});
+
+input_pemanfaataan_utama_lainnya.addEventListener('input', function () {
+    const value = input_pemanfaataan_utama_lainnya.value.trim();
+    if (value.length > 0) {
+        input_pemanfaataan_utama_lainnya.classList.add('is-valid');
+        input_pemanfaataan_utama_lainnya.classList.remove('is-invalid');
+    } else {
+        input_pemanfaataan_utama_lainnya.classList.remove('is-valid');
+        input_pemanfaataan_utama_lainnya.classList.add('is-invalid');
     }
 });
 

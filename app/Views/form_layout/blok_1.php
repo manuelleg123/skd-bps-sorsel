@@ -5,12 +5,7 @@
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama">
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
-                <!-- <div class="mb-3">
-                    <label for="nama" class="form-label">Tahun Lahir</label>
-                    <input type="number" min="1900" class="form-control" id="tahun_lahir" name="tahun_lahir">
-                </div> -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
@@ -36,7 +31,12 @@
                 <label for="pendidikan_tertinggi" class="form-label">Pendidikan Tertinggi</label>
                 <select class="form-select" id="pendidikan_tertinggi" name="pendidikan_tertinggi">
                     <option selected disabled>Pilih Pendidikan Tertinggi</option>
-                    <option value="SD">SD</option>
+                    <option value="<=SLTA/Sederajat"><=SLTA/Sederajat</option>
+                    <option value="D1/D2/D3">D1/D2/D3</option>
+                    <option value="D4/S1">D4/S1</option>
+                    <option value="S2">S2</option>
+                    <option value="S3">S3</option>
+                    <!-- <option value="SD">SD</option>
                     <option value="SMP">SMP</option>
                     <option value="SMA">SMA</option>
                     <option value="D1">D1</option>
@@ -44,7 +44,7 @@
                     <option value="D3">D3</option>
                     <option value="S1">S1</option>
                     <option value="S2">S2</option>
-                    <option value="S3">S3</option>
+                    <option value="S3">S3</option> -->
                 </select>
             </div>
             <div class="mb-3">
@@ -79,6 +79,10 @@
                     <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
+            <div id="item_kategori_instansi_lainnya" class="mb-3" style="display: none;">
+                <input type="text" class="form-control is-invalid" id="kategori_instansi_lainnya" name="kategori_instansi_lainnya" placeholder="Kategori Instansi Lainnya">
+                <div class="invalid-feedback" id="invalid_feedback_kategori_instansi_lainnya">Kategori Instansi Lainnya tidak boleh kosong</div>
+            </div>
             <div class="mb-3">
                 <label for="nama_instansi" class="form-label">Nama Instansi</label>
                 <input type="text" class="form-control" id="nama_instansi" name="nama_instansi">
@@ -93,6 +97,10 @@
                     <option value="Komersil">Komersil</option>
                     <option value="Lainnya">Lainnya</option>
                 </select>
+            </div>
+            <div id="item_pemanfaatan_utama_lainnya" class="mb-3" style="display: none;">
+                <input type="text" class="form-control is-invalid" id="pemanfaatan_utama_lainnya" name="pemanfaatan_utama_lainnya" placeholder="Pemanfaatan Utama Lainnya">
+                <div class="invalid-feedback" id="invalid_feedback_pemanfaatan_utama_lainnya">Pemanfaatan Utama Lainnya tidak boleh kosong</div>
             </div>
             <div class="mb-3">
                 <label for="jenis_layanan" class="form-label">Jenis Layanan Yang Digunakan</label>
