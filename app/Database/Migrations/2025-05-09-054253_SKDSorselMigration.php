@@ -16,7 +16,7 @@ class SKDSorselMigration extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'username' => [
+            'full_name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
             ],
@@ -116,7 +116,80 @@ class SKDSorselMigration extends Migration
         $this->forge->addKey('id', true);
         $this->forge->createTable('responses');
 
-        // 
+        // Question Block 2
+        $this->forge->addField([
+            'id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'auto_increment' => true,
+            ],
+            'question_code' => [
+                'type' => 'VARCHAR',
+                'constraint' => 20,
+            ],
+            'question_text' => [
+                'type' => 'TEXT',
+            ],
+        ]);
+        $this->forge->addKey('id', true);
+        $this->forge->createTable('questions_block_2');
+
+        // Answers Block 2
+        $this->forge->addField([
+            'id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'auto_increment' => true,
+            ],
+            'response_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'question_block_2_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'importance_level' => [
+                'type' => 'INT',
+                'constraint' => 4,
+                'unsigned' => true,
+            ],
+            'satisfaction_level' => [
+                'type' => 'INT',
+                'constraint' => 4,
+                'unsigned' => true,
+            ],
+        ]);
+        $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('response_id', 'responses', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('question_block_2_id', 'questions_block_2', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('answers_block2');
+
+        // Answers Block 3
+        $this->forge->addField([
+            'id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+                'auto_increment' => true,
+            ],
+            'response_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'suggestion' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+        ]);
+        $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('response_id', 'responses', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->createTable('answers_block_3');
     }
 
     public function down()
