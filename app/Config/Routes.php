@@ -14,3 +14,5 @@ $routes->get('/form1', 'FormController::form1');
 $routes->get('/form2', 'FormController::form2');
 $routes->get('/dashboard', 'DashboardController::index');
 $routes->get('/responden', 'DashboardController::responden');
+$routes->get('/allResponsesWithAnswers', 'ResponsesController::getAllResponsesWithAnswers');
+$routes->get('/test', 'ResponsesController::test');

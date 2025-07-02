@@ -3,51 +3,51 @@
         <tbody>
             <tr>
                 <th>Nama</th>
-                <td>MOFAS YUNITA WAY</td>
+                <td id="modal-full_name">MOFAS YUNITA WAY</td>
             </tr>
             <tr>
                 <th><em>Email</em></th>
-                <td>mofasway10@gmail.com</td>
+                <td id="modal-email_address">mofasway10@gmail.com</td>
             </tr>
             <tr>
                 <th>No HP</th>
-                <td></td>
+                <td id="modal-phone_number"></td>
             </tr>
             <tr>
                 <th>Jenis Kelamin</th>
-                <td>Perempuan</td>
+                <td id="modal-gender">Perempuan</td>
             </tr>
             <tr>
                 <th>Pendidikan Tertinggi</th>
-                <td>&lt;= SLTA/Sederajat</td>
+                <td id="modal-highest_education">&lt;= SLTA/Sederajat</td>
             </tr>
             <tr>
                 <th>Pekerjaan Utama</th>
-                <td>Pelajar/Mahasiswa</td>
+                <td id="modal-primary_occupation">Pelajar/Mahasiswa</td>
             </tr>
             <tr>
                 <th>Kategori Instansi</th>
-                <td>Swasta</td>
+                <td id="modal-organization_category">Swasta</td>
             </tr>
             <tr>
                 <th>Nama Instansi</th>
-                <td>Universitas sains dan teknologi Jayapura</td>
+                <td id="modal-organization_name">Universitas sains dan teknologi Jayapura</td>
             </tr>
             <tr>
                 <th>Pemanfaatan Data</th>
-                <td>Penelitian</td>
+                <td id="modal-primary_usage">Penelitian</td>
             </tr>
             <tr>
                 <th>Jenis Layanan</th>
-                <td>Akses Produk Statistik Pada Website BPS</td>
+                <td id="modal-type_of_service_used">Akses Produk Statistik Pada Website BPS</td>
             </tr>
             <tr>
                 <th>Fasilitas Utama</th>
-                <td>Website BPS (bps.go.id) / AllStats BPS ()</td>
+                <td id="modal-facilities_used">Website BPS (bps.go.id) / AllStats BPS ()</td>
             </tr>
             <tr>
                 <th>Apakah pernah melakukan pengaduan terkait Pelayanan Statistik Terpadu (PST)?</th>
-                <td>Tidak</td>
+                <td id="modal-has_complaint_history">Tidak</td>
             </tr>
         </tbody>
     </table>

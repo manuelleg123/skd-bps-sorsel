@@ -44,16 +44,30 @@ function showStep(index) {
 
 function nextStep() {
     const inputs = steps[currentStep].querySelectorAll('input');
+    const selects = steps[currentStep].querySelectorAll('select');
     let valid = true;
 
     inputs.forEach(input => {
         if (!input.checkValidity()) {
-            input.classList.add('invalid');
+            input.classList.add('is-invalid');
             valid = false;
         } else {
-            input.classList.remove('invalid');
+            input.classList.remove('is-invalid');
         }
     });
+
+    selects.forEach(select => {
+        if (!select.checkValidity()) {
+            select.classList.add('is-invalid');
+            valid = false;
+        } else {
+            select.classList.remove('is-invalid');
+        }
+    });
+
+    jenisLayananToggleValidation();
+    fasilitasYangDigunakanToggleValidation();
+    pengaduanToggleRadioValidation();
 
     if (!valid) {
         Swal.fire({
@@ -180,7 +194,6 @@ form_select.forEach((select) => {
 const pekerjaan_utama_select = document.getElementById('pekerjaan_utama');
 const item_pekerjaan_utama_lainnya = document.getElementById('item_pekerjaan_utama_lainnya');
 const input_pekerjaan_utama_lainnya = document.getElementById('pekerjaan_utama_lainnya');
-// const invalid_feedback = document.getElementById('invalid_feedback_pekerjaan_utama_lainnya');
 
 pekerjaan_utama_select.addEventListener('change', function () {
     if (pekerjaan_utama_select.value === 'Lainnya') {

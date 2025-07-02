@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama">
+                    <input type="text" class="form-control" id="nama" name="nama" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -21,36 +21,27 @@
         <div class="card-body">
             <div class="mb-3">
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                <select class="form-select" id="jenis_kelamin" name="jenis_kelamin">
-                    <option selected disabled>Pilih Jenis Kelamin</option>
+                <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
+                    <option value="" selected disabled>Pilih Jenis Kelamin</option>
                     <option value="L">Laki-laki</option>
                     <option value="P">Perempuan</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="pendidikan_tertinggi" class="form-label">Pendidikan Tertinggi</label>
-                <select class="form-select" id="pendidikan_tertinggi" name="pendidikan_tertinggi">
-                    <option selected disabled>Pilih Pendidikan Tertinggi</option>
+                <select class="form-select" id="pendidikan_tertinggi" name="pendidikan_tertinggi" required>
+                    <option value="" selected disabled>Pilih Pendidikan Tertinggi</option>
                     <option value="<=SLTA/Sederajat"><=SLTA/Sederajat</option>
                     <option value="D1/D2/D3">D1/D2/D3</option>
                     <option value="D4/S1">D4/S1</option>
                     <option value="S2">S2</option>
                     <option value="S3">S3</option>
-                    <!-- <option value="SD">SD</option>
-                    <option value="SMP">SMP</option>
-                    <option value="SMA">SMA</option>
-                    <option value="D1">D1</option>
-                    <option value="D2">D2</option>
-                    <option value="D3">D3</option>
-                    <option value="S1">S1</option>
-                    <option value="S2">S2</option>
-                    <option value="S3">S3</option> -->
                 </select>
             </div>
             <div class="mb-3">
                 <label for="pekerjaan_utama" class="form-label">Pekerjaan Utama</label>
-                <select class="form-select" id="pekerjaan_utama" name="pekerjaan_utama">
-                    <option selected disabled>Pilih Pekerjaan Utama</option>
+                <select class="form-select" id="pekerjaan_utama" name="pekerjaan_utama" required>
+                    <option value="" selected disabled>Pilih Pekerjaan Utama</option>
                     <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
                     <option value="Peneliti/Dosen">Peneliti/Dosen</option>
                     <option value="ASN/TNI/Polri">ASN/TNI/Polri</option>
@@ -66,8 +57,8 @@
             </div>
             <div class="mb-3">
                 <label for="kategori_instansi" class="form-label">Kategori Instansi</label>
-                <select class="form-select" id="kategori_instansi" name="kategori_instansi">
-                    <option selected disabled>Pilih Kategori Instansi</option>
+                <select class="form-select" id="kategori_instansi" name="kategori_instansi" required>
+                    <option value="" selected disabled>Pilih Kategori Instansi</option>
                     <option value="Lembaga Negara">Lembaga Negara</option>
                     <option value="Kementerian & Lembaga Pemerintah">Kementerian & Lembaga Pemerintah</option>
                     <option value="TNI/Polri/BIN/Kejaksaan">TNI/Polri/BIN/Kejaksaan</option>
@@ -85,12 +76,12 @@
             </div>
             <div class="mb-3">
                 <label for="nama_instansi" class="form-label">Nama Instansi</label>
-                <input type="text" class="form-control" id="nama_instansi" name="nama_instansi">
+                <input type="text" class="form-control" id="nama_instansi" name="nama_instansi" required>
             </div>
             <div class="mb-3">
                 <label for="pemanfaatan_utama" class="form-label">Pemanfaatan Utama</label>
-                <select class="form-select" id="pemanfaatan_utama" name="pemanfaatan_utama">
-                    <option selected disabled>Pilih Pemanfaatan Utama</option>
+                <select class="form-select" id="pemanfaatan_utama" name="pemanfaatan_utama" required>
+                    <option value="" selected disabled>Pilih Pemanfaatan Utama</option>
                     <option value="Tugas Sekolah/Tugas Kuliah">Tugas Sekolah/Tugas Kuliah</option>
                     <option value="Pemerintah"> Pemerintah</option>
                     <option value="Penelitian">Penelitian</option>

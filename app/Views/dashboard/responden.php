@@ -2,29 +2,32 @@
 
 <?php $this->section('content'); ?>
 <div class="row">
-    <div class="col-lg-12 d-flex align-items-strech">
+    <div class="col-lg-12 d-flex align-items-stretch">
         <div class="card w-100">
             <div class="card-header">
                 <label class="col-form-label">Data Responden yang Sudah Mengisi</label>
             </div>
             <div class="card-body">
-                <table id="respondenTable" class="table-light table-striped display">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nama Responden</th>
-                            <th>Nomor HP</th>
-                            <th>Email</th>
-                            <th>Nama Instansi</th>
-                            <th>Tanggal Pengisian</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                </table>
+                <div class="table-responsive">
+                    <table id="respondenTable" class="table-light table-striped display" style="width: 100%;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nama Responden</th>
+                                <th>Nomor HP</th>
+                                <th>Email</th>
+                                <th>Nama Instansi</th>
+                                <th>Tanggal Pengisian</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-lg-4 d-flex align-items-stretch">
         <div class="card w-100">

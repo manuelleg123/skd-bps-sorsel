@@ -8,12 +8,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -31,12 +31,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -54,12 +54,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -77,12 +77,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -100,12 +100,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -123,12 +123,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required >
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -149,12 +149,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -175,12 +175,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -198,12 +198,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -221,12 +221,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -247,12 +247,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -270,12 +270,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -293,12 +293,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -319,12 +319,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -342,12 +342,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>
@@ -365,12 +365,12 @@
                         <div class="d-flex justify-content-end">
                             <div class="p-1">
                                 <label for="kepentingan" class="form-label">Tingkat Kepentingan</label>
-                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?">
+                                <input type="number" class="form-control number" id="kepentingan" name="kepentingan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa penting aspek ini bagi Anda?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                             <div class="p-1">
                                 <label for="kepuasan" class="form-label">Tingkat Kepuasan</label>
-                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?">
+                                <input type="number" class="form-control number" id="kepuasan" name="kepuasan" min="1" max="10" style="width: 100px;" data-bs-toggle="tooltip" title="Seberapa puas Anda terhadap pelayanan kami pada aspek ini?" required>
                                 <div class="error-message">Angka harus antara 1 dan 10</div>
                             </div>
                         </div>

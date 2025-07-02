@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+use App\Models\AnswersBlock2;
+use App\Models\AnswersBlock3;
+use App\Models\QuestionsBlock2;
+use App\Models\Responses;
+use CodeIgniter\HTTP\ResponseInterface;
+
+class ResponsesController extends BaseController
+{
+    protected $Responses;
+    protected $AnswersBlock2;
+    protected $AnswersBlock3;
+    protected $QuestionsBlock2;
+
+    public function __construct()
+    {
+        // You can load models or libraries here if needed
+        $this->Responses = new Responses();
+        $this->AnswersBlock2 = new AnswersBlock2();
+        $this->AnswersBlock3 = new AnswersBlock3();
+        $this->QuestionsBlock2 = new QuestionsBlock2();
+    }
+
+    public function index()
+    {
+        //
+    }
+
+    public function getAllResponsesWithAnswers()
+    {
+        $responses = $this->Responses->findAll();
+
+        foreach ($responses as &$response) {
+            $response['answers_block_2'] = $this->AnswersBlock2->where('response_id', $response['id'])->findAll();
+            $response['answers_block_3'] = $this->AnswersBlock3->where('response_id', $response['id'])->findAll();
+        }
+
+        return $this->response->setJSON($responses);
+    }
+
+    public function test(): ResponseInterface
+    {
+        $data = [
+            'title' => 'Test',
+            'message' => 'This is a test response.',
+        ];
+
+        $allResponses = $this->Responses->findAll();
+
+        dd($allResponses);
+
+        dd($data);
+
+        return $this->response->setJSON($data);
+    }
+}

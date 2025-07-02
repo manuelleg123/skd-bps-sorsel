@@ -3,7 +3,7 @@
         <tbody>
             <tr>
                 <th>Catatan</th>
-                <td>Sangat bagus dan baik</td>
+                <td id="modal-suggestion">Sangat bagus dan baik</td>
             </tr>
             <tr>
                 <th>Status catatan</th>
