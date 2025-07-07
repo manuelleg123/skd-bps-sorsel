@@ -52,3 +52,56 @@ input.invalid {
   margin-right: 5px; /* Memberikan jarak antara checkbox dan label */
   flex-shrink: 0; /* Menghindari checkbox mengecil */
 }
+
+.rating {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  flex-wrap: wrap;
+}
+.rating input {
+  display: none;
+}
+.rating label {
+  font-size: 1.8rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #ffc107;
+}
+
+.selected-value {
+  font-size: 1.2rem;
+  min-width: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .rating label {
+    font-size: 1.4rem;
+  }
+
+  .rating-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem !important;
+  }
+
+  .selected-value {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .p-1 {
+    padding: 0.25rem !important;
+  }
+
+  .card-body .row {
+    gap: 0.5rem;
+  }
+}

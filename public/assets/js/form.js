@@ -199,10 +199,14 @@ pekerjaan_utama_select.addEventListener('change', function () {
     if (pekerjaan_utama_select.value === 'Lainnya') {
         item_pekerjaan_utama_lainnya.style.display = 'block';
         input_pekerjaan_utama_lainnya.setAttribute('required', 'required');
+        input_pekerjaan_utama_lainnya.name = 'pekerjaan_utama';
+        pekerjaan_utama_select.name = '';
     } else {
         item_pekerjaan_utama_lainnya.style.display = 'none';
         input_pekerjaan_utama_lainnya.removeAttribute('required');
-        input_pekerjaan_utama_lainnya.value = ''; // Reset value
+        input_pekerjaan_utama_lainnya.value = '';
+        input_pekerjaan_utama_lainnya.name = '';
+        pekerjaan_utama_select.name = 'pekerjaan_utama';
     }
 });
 
@@ -225,10 +229,14 @@ kategori_instansi_select.addEventListener('change', function () {
     if (kategori_instansi_select.value === 'Lainnya') {
         item_kategori_instansi_lainnya.style.display = 'block';
         input_kategori_instansi_lainnya.setAttribute('required', 'required');
+        input_kategori_instansi_lainnya.name = 'kategori_instansi';
+        kategori_instansi_select.name = '';
     } else {
         item_kategori_instansi_lainnya.style.display = 'none';
         input_kategori_instansi_lainnya.removeAttribute('required');
-        input_kategori_instansi_lainnya.value = ''; // Reset value
+        input_kategori_instansi_lainnya.value = '';
+        input_kategori_instansi_lainnya.name = '';
+        kategori_instansi_select.name = 'kategori_instansi';
     }
 });
 
@@ -251,10 +259,14 @@ pemanfaatan_utama_select.addEventListener('change', function () {
     if (pemanfaatan_utama_select.value === 'Lainnya') {
         item_pemanfaataan_utama_lainnya.style.display = 'block';
         input_pemanfaataan_utama_lainnya.setAttribute('required', 'required');
+        input_pemanfaataan_utama_lainnya.name = 'pemanfaatan_utama';
+        pemanfaatan_utama_select.name = '';
     } else {
         item_pemanfaataan_utama_lainnya.style.display = 'none';
         input_pemanfaataan_utama_lainnya.removeAttribute('required');
         input_pemanfaataan_utama_lainnya.value = '';
+        input_pemanfaataan_utama_lainnya.name = '';
+        pemanfaatan_utama_select.name = 'pemanfaatan_utama';
     }
 });
 
@@ -328,3 +340,59 @@ function pengaduanToggleRadioValidation() {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const ratingContainers = document.querySelectorAll('.rating');
+
+    ratingContainers.forEach((container, index) => {
+        const nameAttr = container.dataset.name || `rating[${index}]`;
+        const randomKey = Math.floor(Math.random() * 100000);
+        const valueBadge = container.parentElement.querySelector('.selected-value');
+        let currentValue = null;
+
+        const setBadge = (val) => {
+            valueBadge.className = 'badge selected-value';
+            if (!val) {
+                valueBadge.textContent = '-';
+                valueBadge.classList.add('bg-light', 'text-dark', 'border', 'border-secondary');
+            } else {
+                const num = parseInt(val);
+                valueBadge.textContent = val;
+
+                if (num <= 4) valueBadge.classList.add('bg-danger');
+                else if (num <= 7) valueBadge.classList.add('bg-warning', 'text-dark');
+                else if (num === 8) valueBadge.classList.add('bg-primary');
+                else if (num >= 9) valueBadge.classList.add('bg-success');
+            }
+        };
+
+        for (let i = 10; i >= 1; i--) {
+            const input = document.createElement('input');
+            const id = `${nameAttr.replace(/[\[\]]/g, '')}-${i}-${randomKey}`;
+            input.type = 'radio';
+            input.name = nameAttr;
+            input.id = id;
+            input.value = i;
+            input.required = true;
+
+            const label = document.createElement('label');
+            label.setAttribute('for', id);
+            label.innerHTML = '&#9733;';
+
+            label.addEventListener('mouseenter', () => setBadge(i));
+            label.addEventListener('mouseleave', () => setBadge(currentValue));
+            input.addEventListener('change', () => {
+                currentValue = input.value;
+                setBadge(currentValue);
+            });
+
+            container.appendChild(input);
+            container.appendChild(label);
+        }
+
+        setBadge(currentValue);
+    });
+
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+});

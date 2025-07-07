@@ -6,6 +6,7 @@ $.ajax({
     dataType: 'json',
     success: function (data) {
         responData = data; // Simpan data responden
+        console.log('Data responden berhasil diambil:', responData); // Debugging: tampilkan data di konsol
     },
     error: function (xhr, status, error) {
         console.error('Error fetching data:', error); // Debugging: tampilkan error di konsol
@@ -22,8 +23,8 @@ $(document).ready(function () {
     $('#respondenTable').DataTable({
         ajax: {
             url: '/allResponsesWithAnswers',
-            type: 'GET',         // Tambahan: pastikan method sesuai
-            dataSrc: ''          // Sesuaikan dengan struktur JSON dari server
+            type: 'GET',
+            dataSrc: '' 
         },
         processing: true,
         // serverSide: true,
@@ -68,6 +69,7 @@ function showDetails(id) {
         });
         return;
     }
+    console.log(data); // Debugging: tampilkan data di konsol
 
     // Blok I
     document.getElementById('modal-full_name').textContent = data.full_name || 'N/A';

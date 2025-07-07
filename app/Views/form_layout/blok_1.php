@@ -1,25 +1,23 @@
 <div class="step" id="step1">
     <div class="card">
         <div class="card-body">
-            <div class="container">
-                <div class="mb-3">
-                    <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="no_handphone" class="form-label">No Handphone</label>
-                    <input type="text" class="form-control" id="no_handphone" name="no_handphone">
-                </div>
+            <div class="mb-1">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" required>
+            </div>
+            <div class="mb-1">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-1">
+                <label for="no_handphone" class="form-label">No Handphone</label>
+                <input type="text" class="form-control" id="no_handphone" name="no_handphone">
             </div>
         </div>
     </div>
     <div class="card">
         <div class="card-body">
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                 <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
                     <option value="" selected disabled>Pilih Jenis Kelamin</option>
@@ -27,18 +25,19 @@
                     <option value="P">Perempuan</option>
                 </select>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="pendidikan_tertinggi" class="form-label">Pendidikan Tertinggi</label>
                 <select class="form-select" id="pendidikan_tertinggi" name="pendidikan_tertinggi" required>
                     <option value="" selected disabled>Pilih Pendidikan Tertinggi</option>
-                    <option value="<=SLTA/Sederajat"><=SLTA/Sederajat</option>
+                    <option value="<=SLTA/Sederajat">
+                        <=SLTA /Sederajat</option>
                     <option value="D1/D2/D3">D1/D2/D3</option>
                     <option value="D4/S1">D4/S1</option>
                     <option value="S2">S2</option>
                     <option value="S3">S3</option>
                 </select>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="pekerjaan_utama" class="form-label">Pekerjaan Utama</label>
                 <select class="form-select" id="pekerjaan_utama" name="pekerjaan_utama" required>
                     <option value="" selected disabled>Pilih Pekerjaan Utama</option>
@@ -51,11 +50,11 @@
                     <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
-            <div id="item_pekerjaan_utama_lainnya" class="mb-3" style="display: none;">
-                <input type="text" class="form-control is-invalid" id="pekerjaan_utama_lainnya" name="pekerjaan_utama_lainnya" placeholder="Pekerjaan Utama Lainnya">
+            <div id="item_pekerjaan_utama_lainnya" class="mb-1" style="display: none;">
+                <input type="text" class="form-control is-invalid" id="pekerjaan_utama_lainnya" name="pekerjaan_utama" placeholder="Pekerjaan Utama Lainnya">
                 <div class="invalid-feedback" id="invalid_feedback_pekerjaan_utama_lainnya">Pekerjaan Utama Lainnya tidak boleh kosong</div>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="kategori_instansi" class="form-label">Kategori Instansi</label>
                 <select class="form-select" id="kategori_instansi" name="kategori_instansi" required>
                     <option value="" selected disabled>Pilih Kategori Instansi</option>
@@ -70,15 +69,15 @@
                     <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
-            <div id="item_kategori_instansi_lainnya" class="mb-3" style="display: none;">
-                <input type="text" class="form-control is-invalid" id="kategori_instansi_lainnya" name="kategori_instansi_lainnya" placeholder="Kategori Instansi Lainnya">
+            <div id="item_kategori_instansi_lainnya" class="mb-1" style="display: none;">
+                <input type="text" class="form-control is-invalid" id="kategori_instansi_lainnya" name="kategori_instansi" placeholder="Kategori Instansi Lainnya">
                 <div class="invalid-feedback" id="invalid_feedback_kategori_instansi_lainnya">Kategori Instansi Lainnya tidak boleh kosong</div>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="nama_instansi" class="form-label">Nama Instansi</label>
                 <input type="text" class="form-control" id="nama_instansi" name="nama_instansi" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="pemanfaatan_utama" class="form-label">Pemanfaatan Utama</label>
                 <select class="form-select" id="pemanfaatan_utama" name="pemanfaatan_utama" required>
                     <option value="" selected disabled>Pilih Pemanfaatan Utama</option>
@@ -89,11 +88,11 @@
                     <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
-            <div id="item_pemanfaatan_utama_lainnya" class="mb-3" style="display: none;">
-                <input type="text" class="form-control is-invalid" id="pemanfaatan_utama_lainnya" name="pemanfaatan_utama_lainnya" placeholder="Pemanfaatan Utama Lainnya">
+            <div id="item_pemanfaatan_utama_lainnya" class="mb-1" style="display: none;">
+                <input type="text" class="form-control is-invalid" id="pemanfaatan_utama_lainnya" name="pemanfaatan_utama" placeholder="Pemanfaatan Utama Lainnya">
                 <div class="invalid-feedback" id="invalid_feedback_pemanfaatan_utama_lainnya">Pemanfaatan Utama Lainnya tidak boleh kosong</div>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="jenis_layanan" class="form-label">Jenis Layanan Yang Digunakan</label>
                 <div id="jenis_layanan">
                     <div class="custom-control custom-checkbox">
@@ -120,7 +119,7 @@
                 </div>
                 <small id="jenis_layanan_help" class="form-text text-muted">Boleh pilih lebih dari satu jawaban</small>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="fasilitas_yang_digunakan" class="form-label">Fasilitas yang Digunakan</label>
                 <div id="fasilitas_yang_digunakan">
                     <div class="custom-control custom-checkbox">
@@ -151,7 +150,7 @@
                 </div>
                 <small id="jenis_layanan_help" class="form-text text-muted">Boleh pilih lebih dari satu jawaban</small>
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
                 <label for="pengaduan" class="form-label">Apakah pernah melakukan pengaduan terkait Pelayanan Statistik Terpadu (PST)?</label>
                 <div id="pengaduan">
                     <div class="form-check">

@@ -69,7 +69,7 @@ class SKDSorselMigration extends Migration
             ],
             'highest_education' => [
                 'type' => 'ENUM',
-                'constraint' => ['<=SLTA/Sederajat', 'D1/D2/D3', 'D4/S1', 'D4/S1'],
+                'constraint' => ['<=SLTA/Sederajat', 'D1/D2/D3', 'D4/S1', 'S2', 'S3'],
                 'default' => '<=SLTA/Sederajat'
             ],
             'primary_occupation' => [

@@ -20,14 +20,14 @@
       <?= $this->include('form_layout/header'); ?>
       <!--  Header End -->
       <div class="container-fluid d-flex justify-content-center" style="max-width: none;">
-        <div class="card mx-1 w-100" style="max-width: 1200px;">
+        <div class="card mx-1 w-100" style="max-width: auto;">
           <div class="card-body">
             <h3 class="d-flex justify-content-center fw-semibold mb-4">SURVEI KEBUTUHAN DATA 2025</h3>
             <h5 class="d-flex justify-content-center fw-semibold mb-4" id="blok_header">BLOK I. Keterangan Responden</h5>
-            <div class="mx-1">
+            <div class="">
               <div id="form_description">
               </div>
-              <form id="multiStepForm" enctype="multipart/form-data" method="post" action="<?= base_url('/'); ?>">
+              <form id="multiStepForm" enctype="multipart/form-data" method="post" action="<?= base_url('/form/submit'); ?>">
                 <?= csrf_field(); ?>
                 <?= $this->include('form_layout/blok_1'); ?>
                 <?= $this->include('form_layout/blok_2'); ?>
