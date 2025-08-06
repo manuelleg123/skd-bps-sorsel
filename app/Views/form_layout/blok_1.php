@@ -6,16 +6,53 @@
                 <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
             <div class="mb-1">
+                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
+                    <option value="" selected disabled>Pilih Jenis Kelamin</option>
+                    <option value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
+                </select>
+            </div>
+            <div class="mb-1">
+                <label for="pendidikan_tertinggi" class="form-label">Pendidikan Tertinggi</label>
+                <select class="form-select" id="pendidikan_tertinggi" name="pendidikan_tertinggi" required>
+                    <option value="" selected disabled>Pilih Pendidikan Tertinggi</option>
+                    <option value="<=SLTA/Sederajat">
+                        <=SLTA /Sederajat</option>
+                    <option value="D1/D2/D3">D1/D2/D3</option>
+                    <option value="D4/S1">D4/S1</option>
+                    <option value="S2">S2</option>
+                    <option value="S3">S3</option>
+                </select>
+            </div>
+            <div class="mb-1">
+                <label for="pengaduan" class="form-label">Apakah pernah melakukan pengaduan terkait Pelayanan Statistik Terpadu (PST)?</label>
+                <div id="pengaduan">
+                    <div class="form-check">
+                        <label class="form-check-label" for="pengaduan_ya">
+                            Ya
+                        </label>
+                        <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_ya" value="1" onchange="pengaduanToggleRadioValidation()">
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="pengaduan_tidak">
+                            Tidak
+                        </label>
+                        <input class="form-check-input" type="radio" name="pengaduan" id="pengaduan_tidak" value="0" onchange="pengaduanToggleRadioValidation()">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="mb-1">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
             </div>
             <div class="mb-1">
                 <label for="no_handphone" class="form-label">No Handphone</label>
                 <input type="text" class="form-control" id="no_handphone" name="no_handphone">
-            </div>
+            </div> -->
         </div>
     </div>
-    <div class="card">
+    <!-- <div class="card">
         <div class="card-body">
             <div class="mb-1">
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
@@ -168,6 +205,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <button type="button" class="btn btn-primary" onclick="nextStep()">Selanjutnya</button>
 </div>

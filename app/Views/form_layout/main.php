@@ -31,7 +31,6 @@
                 <?= csrf_field(); ?>
                 <?= $this->include('form_layout/blok_1'); ?>
                 <?= $this->include('form_layout/blok_2'); ?>
-                <?= $this->include('form_layout/blok_3'); ?>
               </form>
             </div>
           </div>
