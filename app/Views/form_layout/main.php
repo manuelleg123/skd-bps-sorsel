@@ -44,6 +44,7 @@
   <script src="<?= base_url('/assets/js/app.min.js'); ?>"></script>
   <script src="<?= base_url('/assets/libs/simplebar/dist/simplebar.js'); ?>"></script>
   <script src="<?= base_url('/assets/js/form.js'); ?>"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcfDv8qAAAAAFPm-LoBujJlvRuF-efaq8jTXK1B"></script>
 </body>
 
 </html>

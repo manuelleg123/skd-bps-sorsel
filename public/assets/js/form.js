@@ -63,8 +63,6 @@ function nextStep() {
         }
     });
 
-    // jenisLayananToggleValidation();
-    // fasilitasYangDigunakanToggleValidation();
     pengaduanToggleRadioValidation();
 
     if (!valid) {
@@ -102,10 +100,8 @@ function submitForm() {
         const ratingGroups = new Set();
         const ratings = document.querySelectorAll('.rating');
 
-        // Reset dulu is-invalid
         document.querySelectorAll('.rating').forEach(el => el.classList.remove('is-invalid'));
 
-        // Ambil semua name unik
         ratings.forEach(rating => {
             const name = rating.dataset.name;
             if (name) ratingGroups.add(name);
@@ -118,56 +114,65 @@ function submitForm() {
             if (!selected) {
                 allFilled = false;
 
-                // Tambahkan class is-invalid ke elemen visual
                 const container = document.querySelector(`.rating[data-name="${name}"]`);
                 if (container) container.classList.add('is-invalid');
             }
         });
 
-        if (!allFilled) {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Penilaian belum lengkap',
-                text: 'Masih ada tingkat kepentingan atau kepuasan yang belum diisi!',
-            });
-            return false;
-        }
-
         if (result.isConfirmed) {
             const form = document.getElementById('multiStepForm');
             const formData = new FormData(form);
 
-            console.log('Form Data:', Object.fromEntries(formData.entries()));
-
-            fetch('/form/submit', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(res => {
-                    if (res.success) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Berhasil!',
-                            text: 'Data berhasil dikirim.'
-                        });
-                        form.reset();
-                        showStep(0);
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Gagal Mengirim',
-                            html: Object.values(res.errors).join('<br>')
-                        });
-                    }
-                })
-                .catch(err => {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Kesalahan Server',
-                        text: 'Terjadi kesalahan saat mengirim data.'
-                    });
+            if (!allFilled) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Penilaian belum lengkap',
+                    text: 'Masih ada tingkat kepentingan atau kepuasan yang belum diisi!',
                 });
+                return false;
+            }
+
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6LcfDv8qAAAAAFPm-LoBujJlvRuF-efaq8jTXK1B', { action: 'submit' }).then(function (token) {
+                    formData.append('g-recaptcha-response', token);
+
+                    console.log('Form Data:', Object.fromEntries(formData.entries()));
+
+                    fetch('/form/submit', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                        .then(response => response.json())
+                        .then(res => {
+                            console.log('Response from server:', res);
+                            if (res.success) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Berhasil!',
+                                    text: res.message || 'Data berhasil dikirim.'
+                                });
+                                form.reset();
+                                showStep(0);
+                            } else {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Gagal Mengirim',
+                                    html: Object.values(res.errors).join('<br>') || res.message
+                                });
+                            }
+                        })
+                        .catch(err => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Kesalahan Server',
+                                text: err.message || 'Terjadi kesalahan saat mengirim data.'
+                            });
+                        });
+                });
+            });
         }
     });
 }
@@ -198,15 +203,15 @@ inputs_blok_II.forEach((input) => {
         const nilai = Number(input.value);
         const errorMessage = input.nextElementSibling;
 
-        errorMessage.style.display = 'none'; // Sembunyikan pesan kesalahan
+        errorMessage.style.display = 'none';
         if (nilai < 1 || nilai > 10) {
             input.classList.add('is-invalid');
             input.classList.remove('is-valid');
-            errorMessage.style.display = 'block'; // Tampilkan pesan kesalahan
+            errorMessage.style.display = 'block';
         } else {
             input.classList.remove('is-invalid');
             input.classList.add('is-valid');
-            errorMessage.style.display = 'none'; // Sembunyikan pesan kesalahan
+            errorMessage.style.display = 'none';
         }
     });
 });
@@ -226,145 +231,10 @@ form_select.forEach((select) => {
     });
 });
 
-// const pekerjaan_utama_select = document.getElementById('pekerjaan_utama');
-// const item_pekerjaan_utama_lainnya = document.getElementById('item_pekerjaan_utama_lainnya');
-// const input_pekerjaan_utama_lainnya = document.getElementById('pekerjaan_utama_lainnya');
-
-// pekerjaan_utama_select.addEventListener('change', function () {
-//     if (pekerjaan_utama_select.value === 'Lainnya') {
-//         item_pekerjaan_utama_lainnya.style.display = 'block';
-//         input_pekerjaan_utama_lainnya.setAttribute('required', 'required');
-//         input_pekerjaan_utama_lainnya.name = 'pekerjaan_utama';
-//         pekerjaan_utama_select.name = '';
-//     } else {
-//         item_pekerjaan_utama_lainnya.style.display = 'none';
-//         input_pekerjaan_utama_lainnya.removeAttribute('required');
-//         input_pekerjaan_utama_lainnya.value = '';
-//         input_pekerjaan_utama_lainnya.name = '';
-//         pekerjaan_utama_select.name = 'pekerjaan_utama';
-//     }
-// });
-
-// input_pekerjaan_utama_lainnya.addEventListener('input', function () {
-//     const value = input_pekerjaan_utama_lainnya.value.trim();
-//     if (value.length > 0) {
-//         input_pekerjaan_utama_lainnya.classList.add('is-valid');
-//         input_pekerjaan_utama_lainnya.classList.remove('is-invalid');
-//     } else {
-//         input_pekerjaan_utama_lainnya.classList.remove('is-valid');
-//         input_pekerjaan_utama_lainnya.classList.add('is-invalid');
-//     }
-// });
-
-// const kategori_instansi_select = document.getElementById('kategori_instansi');
-// const item_kategori_instansi_lainnya = document.getElementById('item_kategori_instansi_lainnya');
-// const input_kategori_instansi_lainnya = document.getElementById('kategori_instansi_lainnya');
-
-// kategori_instansi_select.addEventListener('change', function () {
-//     if (kategori_instansi_select.value === 'Lainnya') {
-//         item_kategori_instansi_lainnya.style.display = 'block';
-//         input_kategori_instansi_lainnya.setAttribute('required', 'required');
-//         input_kategori_instansi_lainnya.name = 'kategori_instansi';
-//         kategori_instansi_select.name = '';
-//     } else {
-//         item_kategori_instansi_lainnya.style.display = 'none';
-//         input_kategori_instansi_lainnya.removeAttribute('required');
-//         input_kategori_instansi_lainnya.value = '';
-//         input_kategori_instansi_lainnya.name = '';
-//         kategori_instansi_select.name = 'kategori_instansi';
-//     }
-// });
-
-// input_kategori_instansi_lainnya.addEventListener('input', function () {
-//     const value = input_kategori_instansi_lainnya.value.trim();
-//     if (value.length > 0) {
-//         input_kategori_instansi_lainnya.classList.add('is-valid');
-//         input_kategori_instansi_lainnya.classList.remove('is-invalid');
-//     } else {
-//         input_kategori_instansi_lainnya.classList.remove('is-valid');
-//         input_kategori_instansi_lainnya.classList.add('is-invalid');
-//     }
-// });
-
-// const pemanfaatan_utama_select = document.getElementById('pemanfaatan_utama');
-// const item_pemanfaataan_utama_lainnya = document.getElementById('item_pemanfaatan_utama_lainnya');
-// const input_pemanfaataan_utama_lainnya = document.getElementById('pemanfaatan_utama_lainnya');
-
-// pemanfaatan_utama_select.addEventListener('change', function () {
-//     if (pemanfaatan_utama_select.value === 'Lainnya') {
-//         item_pemanfaataan_utama_lainnya.style.display = 'block';
-//         input_pemanfaataan_utama_lainnya.setAttribute('required', 'required');
-//         input_pemanfaataan_utama_lainnya.name = 'pemanfaatan_utama';
-//         pemanfaatan_utama_select.name = '';
-//     } else {
-//         item_pemanfaataan_utama_lainnya.style.display = 'none';
-//         input_pemanfaataan_utama_lainnya.removeAttribute('required');
-//         input_pemanfaataan_utama_lainnya.value = '';
-//         input_pemanfaataan_utama_lainnya.name = '';
-//         pemanfaatan_utama_select.name = 'pemanfaatan_utama';
-//     }
-// });
-
-// input_pemanfaataan_utama_lainnya.addEventListener('input', function () {
-//     const value = input_pemanfaataan_utama_lainnya.value.trim();
-//     if (value.length > 0) {
-//         input_pemanfaataan_utama_lainnya.classList.add('is-valid');
-//         input_pemanfaataan_utama_lainnya.classList.remove('is-invalid');
-//     } else {
-//         input_pemanfaataan_utama_lainnya.classList.remove('is-valid');
-//         input_pemanfaataan_utama_lainnya.classList.add('is-invalid');
-//     }
-// });
-
-// function jenisLayananToggleValidation() {
-//     const checkboxes = document.querySelectorAll('#jenis_layanan .custom-control-input');
-//     const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-//     const invalidFeedback = document.getElementById('invalid_feedback_jenis_layanan');
-
-
-//     // Iterasi dan beri class is-valid atau is-invalid pada semua checkbox
-//     checkboxes.forEach(checkbox => {
-//         if (anyChecked) {
-//             checkbox.classList.add('is-valid');
-//             checkbox.classList.remove('is-invalid');
-//             invalidFeedback.style.display = 'none'; // Sembunyikan pesan kesalahan
-
-//         } else {
-//             checkbox.classList.add('is-invalid');
-//             checkbox.classList.remove('is-valid');
-//             invalidFeedback.style.display = 'block'; // Tampilkan pesan kesalahan
-//         }
-//     });
-// }
-
-// function fasilitasYangDigunakanToggleValidation() {
-//     const checkboxes = document.querySelectorAll('#fasilitas_yang_digunakan .custom-control-input');
-//     const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-//     const invalidFeedback = document.getElementById('invalid_feedback_fasilitas_yang_digunakan');
-
-//     // Iterasi dan beri class is-valid atau is-invalid pada semua checkbox
-//     checkboxes.forEach(checkbox => {
-//         if (anyChecked) {
-//             checkbox.classList.add('is-valid');
-//             checkbox.classList.remove('is-invalid');
-//             invalidFeedback.style.display = 'none'; // Sembunyikan pesan kesalahan
-
-//         } else {
-//             checkbox.classList.add('is-invalid');
-//             checkbox.classList.remove('is-valid');
-//             invalidFeedback.style.display = 'block'; // Tampilkan pesan kesalahan
-//         }
-//     });
-// }
-
 function pengaduanToggleRadioValidation() {
-    // Ambil semua radio button dalam grup #pengaduan
     const radios = document.querySelectorAll('#pengaduan .form-check-input');
-
-    // Cek apakah ada radio button yang dipilih (checked)
     const anyChecked = Array.from(radios).some(radio => radio.checked);
 
-    // Iterasi dan beri class is-valid atau is-invalid pada semua radio button
     radios.forEach(radio => {
         if (anyChecked) {
             radio.classList.add('is-valid');

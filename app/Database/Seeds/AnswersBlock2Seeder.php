@@ -16,8 +16,8 @@ class AnswersBlock2Seeder extends Seeder
                 $data = [
                     'response_id' => $response['id'],
                     'question_block_2_id' => $question['id'],
-                    'importance_level' => rand(1, 5),
-                    'satisfaction_level' => rand(1, 5),
+                    'importance_level' => rand(1, 10),
+                    'satisfaction_level' => rand(1, 10),
                 ];
                 $this->db->table('answers_block2')->insert($data);
             }

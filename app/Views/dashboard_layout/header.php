@@ -24,7 +24,7 @@
                         <div class="message-body">
                             <span href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
                                 <i class="ti ti-user fs-6"></i>
-                                <p class="mb-0 fs-3">Bank Plecit</p>
+                                <p class="mb-0 fs-3"><?= session('full_name') ?></p>
                             </span>
                             <span href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
                                 <i class="ti ti-building fs-6"></i>

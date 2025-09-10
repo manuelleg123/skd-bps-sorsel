@@ -23,7 +23,7 @@
                                     <img src="<?= base_url('/assets/images/logos/favicon.png'); ?>" width="180" alt="">
                                 </a>
                                 <h2 class="text-center">Login</h2>
-                                <form action="<?= base_url('/login'); ?>" method="POST" enctype="multipart/form-data">
+                                <form action="<?= base_url('/attemptLogin'); ?>" method="POST" enctype="multipart/form-data">
                                     <?= csrf_field() ?>
                                     <div class="input-group mb-3">
                                         <?php if (isset($validation)) : ?>

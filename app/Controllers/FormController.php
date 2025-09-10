@@ -23,38 +23,44 @@ class FormController extends BaseController
 
     public function index()
     {
-        //
         return view('form_layout/main');
     }
 
     public function submit(): ResponseInterface
     {
-        // Handle form submission logic here
-        // For example, you can save the data to the database or perform any other actions
+        $recaptchaResponse = $this->request->getPost('g-recaptcha-response');
+        $secret = "6LcfDv8qAAAAAI1C3U2uMW6KhzS2TEcNY4qsVJ4y";
+
+        $client = \Config\Services::curlrequest();
+        $verifyResponse = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
+            'form_params' => [
+                'secret' => $secret,
+                'response' => $recaptchaResponse
+            ]
+        ]);
+
+        $captchaSuccess = json_decode($verifyResponse->getBody());
+
+        // untuk v3, cek success + score
+        if (!($captchaSuccess->success) || $captchaSuccess->score < 0.5) {
+            return $this->response->setJSON([
+                'success' => false,
+                'errors' => ['captcha' => 'Captcha verification failed. Please try again.'],
+                'message' => 'Captcha verification failed. Please try again.'
+            ]);
+        }
 
         // dd($this->request->getPost());
         $validation = \Config\Services::validation();
         $validation->setRules([
             'nama' => 'required|max_length[100]',
-            'email' => 'valid_email',
-            'no_handphone' => 'max_length[15]',
-            'jenis_kelamin' => 'required|in_list[L,P]',
-            'pendidikan_tertinggi' => 'required|in_list[<=SLTA/Sederajat, D1/D2/D3, D4/S1, S2, S3]',
-            'pekerjaan_utama' => 'required|max_length[50]',
-            'kategori_instansi' => 'required',
-            'nama_instansi' => 'required|max_length[100]',
-            'pemanfaatan_utama' => 'required|max_length[50]',
-        ],[
+            'jenis_kelamin' => 'required|in_list[male,female]',
+            'pendidikan_tertinggi' => 'required',
+            'pengaduan' => 'required|max_length[5]'
+        ], [
             'nama' => [
                 'required' => 'Nama harus diisi.',
                 'max_length' => 'Nama tidak boleh lebih dari 100 karakter.'
-            ],
-            'email' => [
-                'valid_email' => 'Email tidak valid.'
-            ],
-            'no_handphone' => [
-                'max_length' => 'Nomor handphone tidak boleh lebih dari 15 karakter.',
-
             ],
             'jenis_kelamin' => [
                 'required' => 'Jenis kelamin harus dipilih.',
@@ -62,8 +68,12 @@ class FormController extends BaseController
             ],
             'pendidikan_tertinggi' => [
                 'required' => 'Pendidikan tinggi harus diisi.',
+                'in_list' => 'Pendidikan tinggi harus salah satu dari <=SLTA/Sederajat, D1/D2/D3, D4/S1, S2, S3.'
             ],
-            // Add other validation rules as needed
+            'pengaduan' => [
+                'required' => 'Pengaduan harus diisi.',
+                'max_length' => 'Pengaduan tidak boleh lebih dari 5 karakter.'
+            ]
         ]);
 
         if (!$this->validate($validation->getRules())) {
@@ -73,15 +83,54 @@ class FormController extends BaseController
             ]);
         }
 
-
-
-        // Simulate a successful submission response
-        $data = [
-            'status' => 'success',
-            'message' => 'Form submitted successfully.',
+        $blok_1 = [
+            'full_name' => $this->request->getPost('nama'),
+            'gender' => $this->request->getPost('jenis_kelamin'),
+            'highest_education' => $this->request->getPost('pendidikan_tertinggi'),
+            'has_complaint_history' => $this->request->getPost('pengaduan')
         ];
+        $kepentingan = $this->request->getPost('kepentingan');
+        $kepuasan = $this->request->getPost('kepuasan');
+        if (!is_array($kepentingan) || !is_array($kepuasan)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'errors' => ['blok_2' => 'Data kepentingan/kepuasan tidak valid.']
+            ]);
+        }
+        // dd($blok_1, $kepentingan, $kepuasan);
 
-        return $this->response->setJSON($data);
+        try {
+            $response_id = $this->Responses->insert($blok_1);
+            try {
+                $blok_2 = [];
+                foreach ($kepentingan as $key => $value) {
+                    $blok_2[$key]['response_id'] = $response_id;
+                    $blok_2[$key]['question_block_2_id'] = $key + 1;
+                    $blok_2[$key]['importance_level'] = $value;
+                    $blok_2[$key]['satisfaction_level'] = $kepuasan[$key];
+                }
+                // dd($blok_2);
+                foreach ($blok_2 as $data) {
+                    $this->AnswersBlock2->insert($data);
+                }
+            } catch (\Exception $e) {
+                return $this->response->setJSON([
+                    'status' => 'error',
+                    'errors' => ['blok_2' => $e->getMessage()]
+                ]);
+            }
+            return $this->response->setJSON([
+                'status' => 'success',
+                'success' => true,
+                'message' => 'Data berhasil disimpan.'
+            ]);
+        } catch (\Exception $e) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'success' => false,
+                'errors' => ['blok_1' => $e->getMessage()]
+            ]);
+        }
+        // dd($this->request->getPost());
     }
-
 }

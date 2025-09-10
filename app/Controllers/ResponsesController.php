@@ -36,18 +36,51 @@ class ResponsesController extends BaseController
 
         foreach ($responses as &$response) {
             $response['answers_block_2'] = $this->AnswersBlock2->where('response_id', $response['id'])->findAll();
-            $response['answers_block_3'] = $this->AnswersBlock3->where('response_id', $response['id'])->findAll();
         }
 
         return $this->response->setJSON($responses);
     }
 
+    public function deleteResponse($id): ResponseInterface
+    {
+        if (!session()->get('logged_in')) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'Unauthorized access.'
+            ])->setStatusCode(401);
+        }
+
+        try {
+            $this->AnswersBlock2->where('response_id', $id)->delete();
+            $this->Responses->delete($id);
+
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Response and related answers deleted successfully.'
+            ]);
+        } catch (\Exception $e) {
+            return $this->response->setJSON([
+                'success' => false,
+                'message' => 'An error occurred while deleting the response: ' . $e->getMessage()
+            ]);
+        }
+    }
+
     public function test(): ResponseInterface
     {
+        dd(password_hash('Teminabuan9203', PASSWORD_DEFAULT));
         $data = [
             'title' => 'Test',
             'message' => 'This is a test response.',
         ];
+
+        $responses = $this->Responses->findAll();
+
+        foreach ($responses as &$response) {
+            $response['answers_block_2'] = $this->AnswersBlock2->where('response_id', $response['id'])->findAll();
+        }
+
+        dd($responses);
 
         $allResponses = $this->Responses->findAll();
 

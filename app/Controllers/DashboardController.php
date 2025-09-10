@@ -25,4 +25,13 @@ class DashboardController extends BaseController
         ];
         return view('dashboard/responden', $data);
     }
+
+    public function users()
+    {
+        $data = [
+            'title' => 'Data Admin',
+            'page' => 'users',
+        ];
+        return view('dashboard/users', $data);
+    }
 }

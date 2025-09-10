@@ -14,16 +14,8 @@ class Responses extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'full_name',
-        'email_address',
-        'phone_number',
         'gender',
         'highest_education',
-        'primary_occupation',
-        'organization_category',
-        'organization_name',
-        'primary_usage',
-        'type_of_service_used',
-        'facilities_used',
         'has_complaint_history',
         'created_at',
         'status',

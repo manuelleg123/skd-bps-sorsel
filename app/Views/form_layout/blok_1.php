@@ -9,8 +9,8 @@
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                 <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
                     <option value="" selected disabled>Pilih Jenis Kelamin</option>
-                    <option value="L">Laki-laki</option>
-                    <option value="P">Perempuan</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
                 </select>
             </div>
             <div class="mb-1">

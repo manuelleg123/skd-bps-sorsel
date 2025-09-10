@@ -14,9 +14,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Responden</th>
-                                <th>Nomor HP</th>
-                                <th>Email</th>
-                                <th>Nama Instansi</th>
                                 <th>Tanggal Pengisian</th>
                                 <th>Action</th>
                             </tr>
@@ -28,7 +25,7 @@
     </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-4 d-flex align-items-stretch">
         <div class="card w-100">
             <div class="card-body p-4">
@@ -43,10 +40,10 @@
     </div>
 </div>
 <div class="row">
-</div>
+</div> -->
 
 <!-- Modal Start -->
-<div class="modal fade" id="detailDataModal" tabindex="-1" aria-labelledby="detailDataModalLabel" aria-hidden="true">
+<div class="modal fade" id="detailDataModal" aria-labelledby="detailDataModalLabel">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -62,20 +59,13 @@
                     <li class="nav-item flex-fill text-center" role="presentation">
                         <a class="nav-link link-dark fw-semibold" id="blok2-tab" data-bs-toggle="tab" href="#blok2" role="tab">BLOK II</a>
                     </li>
-                    <li class="nav-item flex-fill text-center" role="presentation">
-                        <a class="nav-link link-dark fw-semibold" id="blok3-tab" data-bs-toggle="tab" href="#blok3" role="tab">BLOK III</a>
-                    </li>
                 </ul>
-
                 <div class="tab-content mt-3" id="blokTabContent">
                     <!-- BLOK I -->
                     <?= $this->include('dashboard/responden/blok_1'); ?>
                     <!-- BLOK II -->
                     <?= $this->include('dashboard/responden/blok_2'); ?>
-                    <!-- BLOK III -->
-                    <?= $this->include('dashboard/responden/blok_3'); ?>
                 </div>
-
             </div>
         </div>
     </div>

@@ -52,16 +52,16 @@ class SKDSorselMigration extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
-            'email_address' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
-                'null' => true,
-            ],
-            'phone_number' => [
-                'type' => 'VARCHAR',
-                'constraint' => 20,
-                'null' => true,
-            ],
+            // 'email_address' => [
+            //     'type' => 'VARCHAR',
+            //     'constraint' => 100,
+            //     'null' => true,
+            // ],
+            // 'phone_number' => [
+            //     'type' => 'VARCHAR',
+            //     'constraint' => 20,
+            //     'null' => true,
+            // ],
             'gender' => [
                 'type' => 'ENUM',
                 'constraint' => ['male', 'female'],
@@ -72,32 +72,32 @@ class SKDSorselMigration extends Migration
                 'constraint' => ['<=SLTA/Sederajat', 'D1/D2/D3', 'D4/S1', 'S2', 'S3'],
                 'default' => '<=SLTA/Sederajat'
             ],
-            'primary_occupation' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
-            'organization_category' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
-            'organization_name' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
-            ],
-            'primary_usage' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
-            'type_of_service_used' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-            ],
-            'facilities_used' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-            ],
+            // 'primary_occupation' => [
+            //     'type' => 'VARCHAR',
+            //     'constraint' => 50,
+            // ],
+            // 'organization_category' => [
+            //     'type' => 'VARCHAR',
+            //     'constraint' => 50,
+            // ],
+            // 'organization_name' => [
+            //     'type' => 'VARCHAR',
+            //     'constraint' => 100,
+            // ],
+            // 'primary_usage' => [
+            //     'type' => 'VARCHAR',
+            //     'constraint' => 50,
+            // ],
+            // 'type_of_service_used' => [
+            //     'type' => 'INT',
+            //     'constraint' => 11,
+            //     'unsigned' => true,
+            // ],
+            // 'facilities_used' => [
+            //     'type' => 'INT',
+            //     'constraint' => 11,
+            //     'unsigned' => true,
+            // ],
             'has_complaint_history' => [
                 'type' => 'ENUM',
                 'constraint' => ['yes', 'no'],
@@ -170,26 +170,26 @@ class SKDSorselMigration extends Migration
         $this->forge->createTable('answers_block2');
 
         // Answers Block 3
-        $this->forge->addField([
-            'id' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-                'auto_increment' => true,
-            ],
-            'response_id' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-            ],
-            'suggestion' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
-        ]);
-        $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('response_id', 'responses', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('answers_block_3');
+        // $this->forge->addField([
+        //     'id' => [
+        //         'type' => 'INT',
+        //         'constraint' => 11,
+        //         'unsigned' => true,
+        //         'auto_increment' => true,
+        //     ],
+        //     'response_id' => [
+        //         'type' => 'INT',
+        //         'constraint' => 11,
+        //         'unsigned' => true,
+        //     ],
+        //     'suggestion' => [
+        //         'type' => 'TEXT',
+        //         'null' => true,
+        //     ],
+        // ]);
+        // $this->forge->addKey('id', true);
+        // $this->forge->addForeignKey('response_id', 'responses', 'id', 'CASCADE', 'CASCADE');
+        // $this->forge->createTable('answers_block_3');
     }
 
     public function down()
