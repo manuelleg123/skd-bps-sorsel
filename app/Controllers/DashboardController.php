@@ -9,7 +9,6 @@ class DashboardController extends BaseController
 {
     public function index()
     {
-        //
         $data = [
             'title' => 'Dashboard',
             'page' => 'dashboard',

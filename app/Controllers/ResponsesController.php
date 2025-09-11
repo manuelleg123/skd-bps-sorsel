@@ -7,6 +7,7 @@ use App\Models\AnswersBlock2;
 use App\Models\AnswersBlock3;
 use App\Models\QuestionsBlock2;
 use App\Models\Responses;
+use CodeIgniter\HTTP\Response;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class ResponsesController extends BaseController
@@ -18,7 +19,6 @@ class ResponsesController extends BaseController
 
     public function __construct()
     {
-        // You can load models or libraries here if needed
         $this->Responses = new Responses();
         $this->AnswersBlock2 = new AnswersBlock2();
         $this->AnswersBlock3 = new AnswersBlock3();
@@ -66,28 +66,35 @@ class ResponsesController extends BaseController
         }
     }
 
-    public function test(): ResponseInterface
+    public function getProgressData(): Response
     {
-        dd(password_hash('Teminabuan9203', PASSWORD_DEFAULT));
-        $data = [
-            'title' => 'Test',
-            'message' => 'This is a test response.',
-        ];
+        $data = [];
 
-        $responses = $this->Responses->findAll();
-
-        foreach ($responses as &$response) {
-            $response['answers_block_2'] = $this->AnswersBlock2->where('response_id', $response['id'])->findAll();
-        }
-
-        dd($responses);
-
-        $allResponses = $this->Responses->findAll();
-
-        dd($allResponses);
-
-        dd($data);
+        $data['total_responden'] =  $this->Responses->where('YEAR(created_at)', date('Y'))->countAllResults();
+        // Get all responses first quarter
+        $data['total_responden_triwulan1'] =  $this->Responses->where('YEAR(created_at)', date('Y'))
+            ->where('QUARTER(created_at)', 1)
+            ->countAllResults();
+        // Get all responses second quarter
+        $data['total_responden_triwulan2'] =  $this->Responses->where('YEAR(created_at)', date('Y'))
+            ->where('QUARTER(created_at)', 2)
+            ->countAllResults();
+        // Get all responses third quarter
+        $data['total_responden_triwulan3'] =  $this->Responses->where('YEAR(created_at)', date('Y'))
+            ->where('QUARTER(created_at)', 3)
+            ->countAllResults();
+        // Get all responses fourth quarter
+        $data['total_responden_triwulan4'] =  $this->Responses->where('YEAR(created_at)', date('Y'))
+            ->where('QUARTER(created_at)', 4)
+            ->countAllResults();
 
         return $this->response->setJSON($data);
     }
+
+    public function test()
+    {
+        dd(password_hash('Teminabuan9203', PASSWORD_DEFAULT));
+    }
+
+
 }

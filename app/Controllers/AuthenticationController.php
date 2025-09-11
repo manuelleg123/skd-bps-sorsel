@@ -15,14 +15,10 @@ class AuthenticationController extends BaseController
         $this->Users = new Users();
         helper(['form', 'url']);
     }
+
     public function index()
     {
         return view('login');
-    }
-
-    public function login()
-    {
-        // return redirect()->to('/dashboard');
     }
 
     public function attemptLogin()
@@ -49,7 +45,6 @@ class AuthenticationController extends BaseController
 
     public function logout()
     {
-        // Simulate a logout
         session()->destroy();
         return redirect()->to('/login');
     }

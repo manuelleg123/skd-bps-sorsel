@@ -136,8 +136,6 @@ function submitForm() {
                 grecaptcha.execute('6LcfDv8qAAAAAFPm-LoBujJlvRuF-efaq8jTXK1B', { action: 'submit' }).then(function (token) {
                     formData.append('g-recaptcha-response', token);
 
-                    console.log('Form Data:', Object.fromEntries(formData.entries()));
-
                     fetch('/form/submit', {
                         method: 'POST',
                         body: formData,
@@ -147,7 +145,6 @@ function submitForm() {
                     })
                         .then(response => response.json())
                         .then(res => {
-                            console.log('Response from server:', res);
                             if (res.success) {
                                 Swal.fire({
                                     icon: 'success',

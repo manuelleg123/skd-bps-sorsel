@@ -73,7 +73,6 @@ function showDetails(id) {
         });
         return;
     }
-    console.log(data); // Debugging: tampilkan data di konsol
 
     // Blok I
     document.getElementById('modal-full_name').textContent = data.full_name || 'N/A';
@@ -231,4 +230,109 @@ function confirmDeleteUser(id) {
                 });
         }
     })
+}
+
+function showAddAdminModal() {
+    const addAdminModal = new bootstrap.Modal(document.getElementById('addAdminModal'));
+    addAdminModal.show();
+}
+
+function SubmitAddAdmin() {
+    const input = document.querySelectorAll('#addAdminForm input[required]');
+    let allFilled = true;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
+
+    input.forEach((field) => {
+        if (!field.value.trim()) {
+            allFilled = false;
+        }
+    });
+
+    if (!allFilled) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Semua field wajib diisi.',
+            confirmButtonColor: "#0d6efd"
+        });
+        return;
+    }
+
+    if (password.length < 6) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Password minimal 8 karakter.',
+            confirmButtonColor: "#0d6efd"
+        });
+        return;
+    }
+    
+    if (password !== confirmPassword) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Password dan Konfirmasi Password tidak sesuai.',
+            confirmButtonColor: "#0d6efd"
+        });
+        return;
+    }
+
+    Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Pastikan data yang dimasukkan sudah benar.",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: "#0d6efd",
+        allowOutsideClick: false,
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+            const form = document.getElementById('addAdminForm');
+            const formData = new FormData(form);
+
+            fetch('/users/create', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: 'Admin berhasil ditambahkan.',
+                            confirmButtonColor: "#0d6efd"
+                        }).then(() => {
+                            // Close the modal
+                            $('#adminTable').DataTable().ajax.reload();
+                            form.reset();
+                            const addAdminModalEl = document.getElementById('addAdminModal');
+                            const addAdminModal = bootstrap.Modal.getInstance(addAdminModalEl);
+                            addAdminModal.hide();
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: data.message || 'Gagal menambahkan admin.',
+                            confirmButtonColor: "#0d6efd"
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding admin:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Gagal menambahkan admin. Silakan coba lagi.',
+                        confirmButtonColor: "#0d6efd"
+                    });
+                });
+        }
+    });
 }

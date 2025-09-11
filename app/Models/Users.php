@@ -50,4 +50,11 @@ class Users extends Model
     {
         return $this->findAll();
     }
+
+    public function createUser(array $data)
+    {
+        $data['password_hash'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        unset($data['password']);
+        return $this->insert($data);
+    }
 }

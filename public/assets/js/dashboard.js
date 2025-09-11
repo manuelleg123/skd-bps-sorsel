@@ -207,5 +207,47 @@ $(function () {
       },
     },
   };
-  // new ApexCharts(document.querySelector("#earning"), earning).render();
 })
+
+$(document).ready(function () {
+  const target = 30;
+
+  $.ajax({
+    method: "GET",
+    dataType: "json",
+    success: function (data) {
+      let total_responden = data.total_responden;
+      let total_responden_triwulan1 = data.total_responden_triwulan1;
+      let total_responden_triwulan2 = data.total_responden_triwulan2;
+      let total_responden_triwulan3 = data.total_responden_triwulan3;
+      let total_responden_triwulan4 = data.total_responden_triwulan4;
+
+      // Update tampilan
+      $("#total_responden").text(total_responden);
+      $("#total_responden_triwulan1").text(total_responden_triwulan1);
+      $("#total_responden_triwulan2").text(total_responden_triwulan2);
+      $("#total_responden_triwulan3").text(total_responden_triwulan3);
+      $("#total_responden_triwulan4").text(total_responden_triwulan4);
+
+      // Hitung progress
+      let percent = (total_responden / target * 100).toFixed(2);
+      $("#progressBar").css("width", percent + "%");
+      $("#progressText").text(percent + "% dari target");
+      let percent_triwulan1 = (total_responden_triwulan1 / target * 100).toFixed(2);
+      $("#progressBarTriwulan1").css("width", percent_triwulan1 + "%");
+      $("#progressTextTriwulan1").text(percent_triwulan1 + "% dari target");
+      let percent_triwulan2 = (total_responden_triwulan2 / target * 100).toFixed(2);
+      $("#progressBarTriwulan2").css("width", percent_triwulan2 + "%");
+      $("#progressTextTriwulan2").text(percent_triwulan2 + "% dari target");
+      let percent_triwulan3 = (total_responden_triwulan3 / target * 100).toFixed(2);
+      $("#progressBarTriwulan3").css("width", percent_triwulan3 + "%");
+      $("#progressTextTriwulan3").text(percent_triwulan3 + "% dari target");
+      let percent_triwulan4 = (total_responden_triwulan4 / target * 100).toFixed(2);
+      $("#progressBarTriwulan4").css("width", percent_triwulan4 + "%");
+      $("#progressTextTriwulan4").text(percent_triwulan4 + "% dari target");
+    },
+    error: function () {
+      alert("Gagal mengambil data progress!");
+    }
+  });
+});

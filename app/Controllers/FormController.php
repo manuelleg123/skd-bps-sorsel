@@ -41,7 +41,6 @@ class FormController extends BaseController
 
         $captchaSuccess = json_decode($verifyResponse->getBody());
 
-        // untuk v3, cek success + score
         if (!($captchaSuccess->success) || $captchaSuccess->score < 0.5) {
             return $this->response->setJSON([
                 'success' => false,
@@ -50,7 +49,6 @@ class FormController extends BaseController
             ]);
         }
 
-        // dd($this->request->getPost());
         $validation = \Config\Services::validation();
         $validation->setRules([
             'nama' => 'required|max_length[100]',
@@ -97,7 +95,6 @@ class FormController extends BaseController
                 'errors' => ['blok_2' => 'Data kepentingan/kepuasan tidak valid.']
             ]);
         }
-        // dd($blok_1, $kepentingan, $kepuasan);
 
         try {
             $response_id = $this->Responses->insert($blok_1);
@@ -109,7 +106,6 @@ class FormController extends BaseController
                     $blok_2[$key]['importance_level'] = $value;
                     $blok_2[$key]['satisfaction_level'] = $kepuasan[$key];
                 }
-                // dd($blok_2);
                 foreach ($blok_2 as $data) {
                     $this->AnswersBlock2->insert($data);
                 }
